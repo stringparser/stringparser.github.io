@@ -1,19 +1,62 @@
 import Link from 'next/link';
+import { withRouter } from 'next/router';
+import styled from 'styled-components';
 
-import Nav from './Nav';
+import { colors, zIndex, boxShadow } from './sharedStyles';
 
-const Navbar = () => (
+export const navbarHeight = '60px';
+
+const Nav = styled.nav`
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: ${navbarHeight};
+  padding: 1rem 2rem;
+  z-index: ${zIndex.navbar};
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  ${boxShadow}
+`;
+
+const NavItem = styled.div`
+  &:first-of-type {
+    text-align: left;
+  }
+
+  &:last-of-type {
+    text-align: right;
+  }
+
+  a {
+    color: currentColor;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: ${colors.link};
+  }
+
+  a:not(:last-child) {
+    margin-right: 1rem;
+  }
+`;
+
+const Navbar: React.SFC = ({ children }) => (
   <Nav>
-    <Link href="/about">
-      <a>About</a>
-    </Link>
-    <Link href="/services">
-      <a>Services</a>
-    </Link>
-    <Link href="/contact">
-      <a>Contact</a>
-    </Link>
+    <NavItem>
+      <Link href="/">
+        <a>HOME</a>
+      </Link>
+    </NavItem>
+    <NavItem>
+      {children}
+    </NavItem>
   </Nav>
 );
 
-export default Navbar;
+export default withRouter(Navbar);

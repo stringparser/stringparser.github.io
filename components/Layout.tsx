@@ -1,22 +1,24 @@
 import Head from 'next/head';
 import styled, { injectGlobal } from 'styled-components';
-
-import Navbar from './Navbar';
-import Footer from './Footer';
+import { zIndex } from './sharedStyles';
 
 injectGlobal`
   html,
   body {
     margin: 0;
+    font-family: 'Source Sans Pro', Helvetica, sans-serif;
   }
 
   color: rgba(0,0,0,0.8);
   background-color: snow;
+
+  * {
+    box-sizing: border-box;
+  }
 `;
 
 const Main = styled.main`
-  font-size: 16px;
-  font-family: 'Source Sans Pro', Helvetica, sans-serif;
+  z-index: ${zIndex.background};
 `;
 
 const Layout: React.SFC = ({ children }) => (
@@ -28,11 +30,7 @@ const Layout: React.SFC = ({ children }) => (
       />
     </Head>
     <Main>
-      <Navbar />
       {children}
-      <Footer>
-        linkedin
-      </Footer>
     </Main>
   </>
 );

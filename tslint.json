@@ -8,6 +8,7 @@
     "max-line-length": [true, 120],
     "ter-arrow-parens": false,
     "no-unused-variable": [true, {"ignore-pattern": "^_"}],
+    "jsx-no-multiline-js": false,
     "no-duplicate-imports": false,
     "no-else-after-return": false,
     "strict-boolean-expressions": false
