@@ -1,0 +1,15 @@
+{
+  "extends": ["tslint-config-airbnb", "tslint-react"],
+  "rules": {
+    "align": [true, "parameters", "statements", "members"],
+    "semicolon": [true, "always", "ignore-interfaces"],
+    "import-name": [false],
+    "variable-name": [true, "ban-keywords"],
+    "max-line-length": [true, 120],
+    "ter-arrow-parens": false,
+    "no-unused-variable": [true, {"ignore-pattern": "^_"}],
+    "no-duplicate-imports": false,
+    "no-else-after-return": false,
+    "strict-boolean-expressions": false
+  }
+}
