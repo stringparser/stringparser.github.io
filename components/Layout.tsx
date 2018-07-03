@@ -1,12 +1,15 @@
-import Head from 'next/head';
 import styled, { injectGlobal } from 'styled-components';
+
+import font from '../vendor/SourceSansPro';
 import { zIndex } from './sharedStyles';
 
 injectGlobal`
+  ${font}
+
   html,
   body {
     margin: 0;
-    font-family: 'Source Sans Pro', Helvetica, sans-serif;
+    font-family: 'Source Sans Pro', sans-serif;
   }
 
   color: rgba(0,0,0,0.8);
@@ -23,12 +26,6 @@ const Main = styled.main`
 
 const Layout: React.SFC = ({ children }) => (
   <>
-    <Head>
-      <link
-        rel="stylesheet"
-        href="https://fonts.googleapis.com/css?family=Source+Sans+Pro"
-      />
-    </Head>
     <Main>
       {children}
     </Main>

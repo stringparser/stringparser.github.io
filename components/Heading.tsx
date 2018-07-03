@@ -3,6 +3,7 @@ import { forMedia } from './sharedStyles';
 
 const shared = `
   margin: 0;
+  font-weight: normal;
 `;
 
 export const H1 = styled.h1`
@@ -32,3 +33,6 @@ export const H4 = styled.h4`
 
   ${forMedia('tablet', 'font-size: 1.5rem;')}
 `;
+
+export const H5 = styled.h5`${shared}`;
+export const H6 = styled.h6`${shared}`;

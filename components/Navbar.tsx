@@ -19,7 +19,7 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  ${boxShadow}
+  background-color: rgba(255, 255, 255, 0.7);
 `;
 
 const NavItem = styled.div`
@@ -50,7 +50,7 @@ const Navbar: React.SFC = ({ children }) => (
   <Nav>
     <NavItem>
       <Link href="/">
-        <a>HOME</a>
+        <a>Javier Carrillo Milla</a>
       </Link>
     </NavItem>
     <NavItem>

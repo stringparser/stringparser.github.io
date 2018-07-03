@@ -1,4 +1,4 @@
-import Document, { Head, Main, NextScript } from 'next/document';
+import Document, { Main, NextScript } from 'next/document';
 import { ServerStyleSheet } from 'styled-components';
 
 export default class MyDocument extends Document {
@@ -12,10 +12,14 @@ export default class MyDocument extends Document {
   render() {
     return (
       <html>
-        <Head>
-          <title>stringparser | code, music and physics</title>
+        <head>
+          <meta charSet="utf-8" />
+          <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+          <title>stringparser</title>
+          <meta name="viewport" content="width=device-width" user-scalable="no" />
+          <meta name="description" content="Software Engineer. code, music and physics" />
           {this.props.styleTags}
-        </Head>
+        </head>
         <body>
           <Main />
           <NextScript />

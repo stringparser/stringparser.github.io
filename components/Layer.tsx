@@ -6,9 +6,7 @@ type Props = {
 };
 
 const Layer = styled<Props, 'div'>('div')`
-  & > * {
-    ${({ mixins }) => composeMixins(mixins)}
-  }
+  ${({ mixins }) => composeMixins(mixins)}
 `;
 
 export default Layer;
