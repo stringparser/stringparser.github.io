@@ -1,7 +1,13 @@
 {
+  "now": {
+    "name": "stringparser-web",
+    "alias": [
+      "stringparser.co"
+    ]
+  },
   "name": "stringparser.co",
-  "version": "1.0.0",
   "main": "index.js",
+  "version": "1.0.0",
   "author": "Javier Carrillo Milla <stringparser@gmail.com>",
   "license": "MIT",
   "private": false,
