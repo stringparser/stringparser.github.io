@@ -5,9 +5,10 @@ import Layer from '../components/Layer';
 import Navbar from '../components/Navbar';
 import { BR } from '../components/Spacing';
 import Layout from '../components/Layout';
+import Footer from '../components/Footer';
 import Section from '../components/Section';
 import { H1, H3, H4 } from '../components/Heading';
-import { align, bgImage, columns, height, bgColor, color, list } from '../components/mixins';
+import { align, bgImage, columns, height, list, gutter } from '../components/mixins';
 
 const sections = [
   {
@@ -50,11 +51,10 @@ const IndexPage = () => (
     <Navbar>
       {sections.map(renderNavbarLink)}
     </Navbar>
-    <BR />
 
     <Section id="root" mixins={[height('100vh')]}>
       <Layer mixins={[height('100%'), columns()]}>
-        <Layer mixins={[align('v-center')]}>
+        <Layer mixins={[align('v-center'), gutter()]}>
           <H1>Hi, I'm Javier</H1>
           <H4>Freelance Software Engineer</H4>
         </Layer>
@@ -62,7 +62,7 @@ const IndexPage = () => (
       </Layer>
     </Section>
 
-    <Section id="about">
+    <Section id="about" mixins={[gutter()]}>
       <H3>About</H3>
       <BR />
 
@@ -73,10 +73,11 @@ const IndexPage = () => (
           I mostly focus in front-end software but I also have experience \
           writing back-end services and setting up infraestructure. \
         `}</p>
+        <BR />
       </Layer>
     </Section>
 
-    <Section id="services">
+    <Section id="services" mixins={[gutter()]}>
       <H3>Services</H3>
       <BR />
 
@@ -103,7 +104,9 @@ const IndexPage = () => (
           </p>
         </Card>
         <Card>
-          <H4>Analysis, research and optimization</H4>
+          <H4>
+            Analysis, research and optimization
+          </H4>
           <p>{`
             Need to setup monitoring? \
             You want to research paths that have been lingering \
@@ -116,10 +119,16 @@ const IndexPage = () => (
     </Section>
 
     <Section>
-      <H4>Contact</H4>
-      <BR />
-
+      <Layer mixins={[gutter()]}>
+        <H4>Contact</H4>
+      </Layer>
     </Section>
+
+    <Footer>
+      <Layer mixins={[gutter()]}>
+        Footer
+      </Layer>
+    </Footer>
   </Layout>
 );
 

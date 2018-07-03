@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 
+import { navbarHeight } from './Navbar';
 import { composeMixins } from './mixins';
 
 type Props = {
@@ -8,7 +9,8 @@ type Props = {
 
 const Section = styled<Props, 'section'>('section')`
   ${({ mixins }) => composeMixins(mixins)}
-  padding: 2rem 4rem;
+
+  padding-top: ${navbarHeight};
 `;
 
 export default Section;

@@ -47,6 +47,22 @@ export const align = (v: Aligns) => alignment[v];
 
 export const height = (v: string) => `height: ${v};`;
 
+export const list = () => `
+  & > * {
+    margin: 1rem 0;
+  }
+
+  ${forMedia('tablet', `
+    & > * {
+      margin: 0 2rem;
+    }
+  `)}
+`;
+
+export const gutter = () => `
+  padding: 2rem 4rem;
+`;
+
 export const columns = () => `
   width: 100%;
 
@@ -62,11 +78,4 @@ export const columns = () => `
   ${forMedia('tablet', `
     flex-direction: row;
   `)}
-`;
-
-export const list = () => `
-  & > *:not(:last-child) {
-    margin-top: 1rem;
-    margin-right: 2rem;
-  }
 `;

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { boxShadow } from './sharedStyles';
 
 const Card = styled.div`
-  padding: 1rem;
+  padding: 2rem 1.5rem;
 
   ${boxShadow}
 `;

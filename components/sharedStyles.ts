@@ -5,6 +5,10 @@ export const colors = {
   secondary: '#6d6d6d',
 };
 
+export const gutter = {
+  topLevel: '1rem 2rem',
+};
+
 export const zIndex = {
   background: 0,
   foreground: 100,
