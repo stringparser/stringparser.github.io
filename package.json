@@ -27,6 +27,6 @@
     "typescript": "^2.9.2"
   },
   "devDependencies": {
-    "now": "^11.2.4"
+    "now": "^11.2.5"
   }
 }
