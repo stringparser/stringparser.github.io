@@ -37,12 +37,14 @@ export type Aligns = keyof (typeof alignment);
 
 export const align = (v: Aligns) => alignment[v];
 
-export const height = (v: string) => `height: ${v};`;
+export const height = (v: string) => `
+  min-height: ${v};
+`;
 
 export const list = () => `
   & > * {
     margin-top: 1rem;
-    margin-left: 1rem;
+    margin-right: 1rem;
   }
 `;
 
@@ -52,6 +54,11 @@ export const gutter = (n: number = 1) => `
   ${forMedia('desktop', `
     padding: ${2 * n}rem ${4 * n}rem;
   `)}
+`;
+
+export const content = () => `
+  margin: 0 auto;
+  max-width: 960px;
 `;
 
 export const columns = (num?: number) => `

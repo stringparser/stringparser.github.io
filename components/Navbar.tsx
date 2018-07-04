@@ -19,7 +19,8 @@ const Nav = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-  background-color: rgba(255, 255, 255, 0.7);
+  color: white;
+  background-color: rgba(0, 0, 0, 0.1);
 `;
 
 const NavItem = styled.div`
@@ -33,6 +34,7 @@ const NavItem = styled.div`
 
   a {
     color: currentColor;
+    font-weight: bold;
     text-transform: uppercase;
     text-decoration: none;
   }

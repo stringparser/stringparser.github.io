@@ -9,7 +9,7 @@ import Layout from '../components/Layout';
 import Footer from '../components/Footer';
 import Section from '../components/Section';
 import { forMedia } from '../components/theme';
-import { H2, H3, H4 } from '../components/Heading';
+import { H2, H3, H4, H1 } from '../components/Heading';
 
 import {
   list,
@@ -18,6 +18,9 @@ import {
   bgImage,
   columns,
   bgColor,
+  height,
+  color,
+  content,
 } from '../components/mixins';
 
 const mainBGImage = `
@@ -39,27 +42,33 @@ const IndexPage = () => (
       </Link>
     </Navbar>
 
-    <Section id="top">
-      <Layer mixins={[columns()]}>
-        <Layer mixins={[align('v-center'), gutter(2)]}>
+    <Section
+      id="top"
+      mixins={[
+        bgImage(mainBGImage),
+      ]}
+    >
+      <Layer
+        mixins={[
+          color('inverted'),
+          align('center'),
+          bgColor('dim'),
+          height('80vh'),
+        ]}
+      >
+        <Layer
+          mixins={[
+            gutter(),
+            content(),
+          ]}
+        >
           <Layer mixins={[forMedia('desktop', 'display: none')]}>
             <BR />
           </Layer>
-          <H2>I'm freelance Software Engineer</H2>
-          <Text>
-            {`
-              My background is in Physics. I focus in front-end software \
-              and have experience writing back-end services and setting up \
-              infraestructure. I like to solve problems. The simpler the better. \
-              I'm based in Berlin.
-            `}
-          </Text>
+          <H1>
+            <b>I'm freelance Software Engineer</b>
+          </H1>
         </Layer>
-        <Layer
-          mixins={[
-            bgImage(mainBGImage),
-          ]}
-        />
       </Layer>
     </Section>
 
@@ -110,6 +119,21 @@ const IndexPage = () => (
           </Text>
         </Card>
       </Layer>
+    </Section>
+
+    <Section id="about" mixins={[columns()]}>
+      <Layer mixins={[gutter()]}>
+        <H1>About</H1>
+        <Text>
+          {`
+            My background is in Physics. I focus in front-end software \
+            and have experience writing back-end services and setting up \
+            infraestructure. I like to solve problems. The simpler the better. \
+            I'm based in Berlin.
+          `}
+        </Text>
+      </Layer>
+      <Layer />
     </Section>
 
     <Section>
