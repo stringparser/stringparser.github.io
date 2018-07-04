@@ -1,8 +1,13 @@
 export const colors = {
   dim: 'rgba(0,0,0,0.7)',
+  dimmer: 'rgba(0,0,0,0.5)',
+  info: 'aliceblue',
   link: 'blue',
+  glass: 'rgba(0,0,0,0.15)',
   primary: 'black',
+  inverted: 'snow',
   secondary: '#6d6d6d',
+  'dim-inverted': 'rgba(255,255,255,0.8)',
 };
 
 export const gutter = {
@@ -17,6 +22,8 @@ export const zIndex = {
   dialog: 400,
   alert: 500,
 };
+
+export const lineHeight = '2rem';
 
 export const breakpoints = {
   phone: '576px',

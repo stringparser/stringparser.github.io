@@ -1,13 +1,18 @@
 import styled, { injectGlobal } from 'styled-components';
 
 import font from '../vendor/SourceSansPro';
-import { zIndex } from './sharedStyles';
+import { zIndex, forMedia } from './theme';
 
 injectGlobal`
   ${font}
 
-  html,
-  body {
+  ${forMedia('tablet', `
+    html {
+      font-size: 14px;
+    }
+  `)}
+
+  html, body {
     margin: 0;
     font-family: 'Source Sans Pro', sans-serif;
   }
@@ -17,6 +22,7 @@ injectGlobal`
 
   * {
     box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
   }
 `;
 

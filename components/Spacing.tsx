@@ -1,11 +1,13 @@
 import styled from 'styled-components';
 
+import { lineHeight } from './theme';
+
 type BRProps = {
   height?: string;
 };
 
 export const BR = styled<BRProps, 'br'>('br')`
-  height: ${({ height }) => height || '2rem'};
+  height: ${({ height }) => height || lineHeight};
   content: '';
   display: block;
 `;
