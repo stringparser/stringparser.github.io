@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { boxShadow } from './theme';
+import { boxShadow } from './mixins';
 
 const Card = styled.div`
   padding: 2rem 1.5rem;
 
   background-color: white;
 
-  ${boxShadow}
+  ${boxShadow()}
 `;
 
 export default Card;

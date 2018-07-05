@@ -1,12 +1,18 @@
 
 import styled from 'styled-components';
-import { forMedia, align } from './mixins';
 
+import { forMedia, align } from './mixins';
+import { breakpoints, colors } from './theme';
+
+import { navbarHeight } from './Navbar';
 import Background, { parseBackgroundAsString } from './Background';
 
 const sectionTypes = {
   primary: `
     color: white;
+  `,
+  info: `
+    background-color: ${colors.info};
   `,
   secondary: `
     color: black;
@@ -17,7 +23,7 @@ type SectionType = keyof (typeof sectionTypes);
 
 type Props = {
   id?: string;
-  type?: SectionType;
+  variation?: SectionType;
   background?: string;
 };
 
@@ -26,32 +32,28 @@ const Content = styled.div`
   max-width: 960px;
 `;
 
+const StyledSection = styled<Props, 'section'>('section')`
+  position: relative;
+  min-height: 30rem;
+  ${align('center')}
+
+  padding: ${navbarHeight * 2}rem 2rem;
+  ${forMedia('tablet', `padding: 5rem;`)}
+
+  ${({ variation }) => sectionTypes[variation || 'secondary']}
+`;
+
 const Section: React.SFC<Props> = ({
-  type = 'secondary',
   background,
   children,
   ...props
 }) => (
-  <section {...props}>
+  <StyledSection {...props}>
     <Content>
       {children}
     </Content>
-    <style jsx={true}>
-    {`
-      padding: 2rem;
-      position: relative;
-      min-height: 30rem;
-
-      ${align('center')}
-      ${sectionTypes[type] ||  ''}
-
-      ${forMedia('tablet', `
-        padding: 5rem;
-      `)}
-    `}
-    </style>
     <Background {...parseBackgroundAsString(background)} />
-  </section>
+  </StyledSection>
 );
 
 export default Section;

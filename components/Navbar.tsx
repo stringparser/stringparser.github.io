@@ -4,14 +4,14 @@ import styled from 'styled-components';
 
 import { colors, zIndex } from './theme';
 
-export const navbarHeight = '4rem';
+export const navbarHeight = 4;
 
 const Nav = styled.nav`
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  height: ${navbarHeight};
+  height: ${navbarHeight}rem;
   padding: 1rem 2rem;
   z-index: ${zIndex.navbar};
 
@@ -20,7 +20,7 @@ const Nav = styled.nav`
   justify-content: space-between;
 
   color: white;
-  background-color: rgba(0, 0, 0, 0.1);
+  background-color: rgba(0, 0, 0, 0.05);
 
   &:hover {
     a {
@@ -65,10 +65,10 @@ const Navbar: React.SFC = () => (
       <Link href="/resume">
         <a>Resume</a>
       </Link>
-      <Link href="/services">
+      <Link href="/#services">
         <a>Services</a>
       </Link>
-      <Link href="/contact">
+      <Link href="/#contact">
         <a>Contact</a>
       </Link>
       <Link href="/about">
