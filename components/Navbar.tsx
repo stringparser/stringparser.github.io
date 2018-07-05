@@ -54,22 +54,25 @@ const NavItem = styled.div`
   }
 `;
 
-const Navbar: React.SFC = ({ children }) => (
+const Navbar: React.SFC = () => (
   <Nav>
     <NavItem>
       <Link href="/">
-        <a>Javier Carrillo</a>
+        <a>Logo</a>
       </Link>
     </NavItem>
     <NavItem>
-      <Link href="/#about">
-        <a>About</a>
+      <Link href="/resume">
+        <a>Resume</a>
       </Link>
-      <Link href="/#services">
+      <Link href="/services">
         <a>Services</a>
       </Link>
-      <Link href="/#contact">
+      <Link href="/contact">
         <a>Contact</a>
+      </Link>
+      <Link href="/about">
+        <a>About</a>
       </Link>
     </NavItem>
   </Nav>

@@ -1,6 +1,6 @@
-import { zIndex } from './theme';
+import { zIndex, colors } from './theme';
 
-type Props = {
+export type BackgroundProps = {
   color?: string;
   image?: string;
   video?: string;
@@ -16,7 +16,7 @@ const sharedStyles = `
   position: absolute;
 `;
 
-const BackgroundVideo: React.SFC<Props> = ({ video, image }) => (
+const BackgroundVideo: React.SFC<BackgroundProps> = ({ video, image }) => (
   <div>
     <video
       src={video}
@@ -34,7 +34,7 @@ const BackgroundVideo: React.SFC<Props> = ({ video, image }) => (
   </div>
 );
 
-const BackgroundImage: React.SFC<Props> = ({ image }) => (
+const BackgroundImage: React.SFC<BackgroundProps> = ({ image }) => (
   <div>
     <style jsx={true}>
       {`
@@ -47,7 +47,7 @@ const BackgroundImage: React.SFC<Props> = ({ image }) => (
   </div>
 );
 
-const BackgroundColor: React.SFC<Props> = ({ color }) => (
+const BackgroundColor: React.SFC<BackgroundProps> = ({ color }) => (
   <div>
     <style jsx={true}>
       {`
@@ -59,7 +59,17 @@ const BackgroundColor: React.SFC<Props> = ({ color }) => (
   </div>
 );
 
-const Background: React.SFC<Props> = ({ color, video, image }) => (
+export const parseBackgroundAsString = (input: string) => ({
+  color: /mp\d$/.test(input) ? colors.dim : undefined,
+  image: /mp\d$/.test(input) ? undefined : input,
+  video: /mp\d$/.test(input) ? input : undefined,
+});
+
+const Background: React.SFC<BackgroundProps> = ({
+  color,
+  video,
+  image,
+}) => (
   <>
     {video && <BackgroundVideo video={video} />}
     {image && <BackgroundImage image={image} />}

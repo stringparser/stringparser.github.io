@@ -1,30 +1,21 @@
 
 import Text from '../components/Text';
-import { H2 } from '../components/Heading';
 import Navbar from '../components/Navbar';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
-import Background from '../components/Background';
-import { colors } from '../components/theme';
+import { H1, H2 } from '../components/Heading';
 
 const IndexPage: React.SFC = () => (
   <Layout>
     <Navbar />
-    <Section type="primary">
-      <Text>
+    <Section type="primary" background="/static/video/typing-on-computer.mp4">
+      <H1>
         I’m Javier, freelance Software Engineer.
-      </Text>
-      <H2>
-        Let's build something together
-      </H2>
-      <Background
-        color={colors.dimmer}
-        video="/static/video/typing-on-computer.mp4"
-      />
+      </H1>
     </Section>
     <Section>
       <H2>
-        I focus on front-end software
+        I focus on front-end development
       </H2>
       <Text>
       {`

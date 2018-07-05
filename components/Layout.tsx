@@ -1,11 +1,45 @@
 import Head from 'next/head';
 
 import { zIndex } from './theme';
-import { FontHeadLink, contentFontStyle } from './Font';
+import { FontHeadLink, contentFont } from './Font';
+import { forMedia } from './mixins';
+import { injectGlobal } from 'styled-components';
+
+injectGlobal`
+  html {
+    font-size: 12px;
+  }
+  ${forMedia('tablet', `
+    html {
+      font-size: 16px;
+    }
+  `)}
+
+  html,
+  body {
+    margin: 0;
+  }
+
+  body {
+    ${contentFont}
+    background-color: snow;
+  }
+
+  * {
+    z-index: ${zIndex.foreground};
+    transition: all 250ms ease-in-out;
+    box-sizing: border-box;
+  }
+`;
 
 const Layout: React.SFC = ({ children }) => (
   <main>
     <Head>
+      <meta charSet="utf-8" />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <title>stringparser</title>
+      <meta name="viewport" content="width=device-width" user-scalable="no" />
+      <meta name="description" content="Software Engineer. code, music and physics" />
       <FontHeadLink />
     </Head>
 
@@ -16,26 +50,6 @@ const Layout: React.SFC = ({ children }) => (
       z-index: ${zIndex.background};
       position: relative;
     `}
-    </style>
-
-    <style jsx={true} global={true}>
-      {`
-        html,
-        body {
-          margin: 0;
-        }
-
-        body {
-          ${contentFontStyle}
-          background-color: snow;
-        }
-
-        * {
-          z-index: ${zIndex.foreground};
-          transition: all 250ms ease-in-out;
-          box-sizing: border-box;
-        }
-      `}
     </style>
   </main>
 );

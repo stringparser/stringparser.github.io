@@ -1,10 +1,9 @@
 
-export const headerFontStyle = `
-  font-weight: bold;
+export const headerFont = `
   font-family: 'Merriweather', serif;
 `;
 
-export const contentFontStyle = `
+export const contentFont = `
   font-family: 'Open Sans', sans-serif;
 `;
 
