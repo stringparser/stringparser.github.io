@@ -9,6 +9,11 @@
       "es2017.object"
     ],
     "jsx": "preserve",
+    "paths": {
+      "components/*": [
+        "src/components/*"
+      ]
+    },
     "module": "esnext",
     "target": "esnext",
     "baseUrl": ".",

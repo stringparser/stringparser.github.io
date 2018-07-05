@@ -1,8 +1,10 @@
 export const colors = {
-  dim: 'rgba(0,0,0,0.7)',
-  dimmer: 'rgba(0,0,0,0.5)',
+  white: 'snow',
+  dark: 'rgba(0,0,0,0.9)',
+  dim: 'rgba(0,0,0,0.5)',
+  dimmer: 'rgba(0,0,0,0.7)',
   info: 'aliceblue',
-  link: 'blue',
+  link: 'aliceblue',
   glass: 'rgba(0,0,0,0.15)',
   primary: 'black',
   inverted: 'snow',
@@ -23,8 +25,6 @@ export const zIndex = {
   alert: 500,
 };
 
-export const lineHeight = '2rem';
-
 export const breakpoints = {
   phone: '576px',
   tablet: '768px',
@@ -33,19 +33,3 @@ export const breakpoints = {
 };
 
 export type Media = keyof (typeof breakpoints);
-
-const mqForMedia = (media: Media) => (
-  media === 'phone'
-    ? `(max-width: ${breakpoints[media]})`
-    : `(min-width: ${breakpoints[media]})`
-);
-
-export const forMedia = (media: Media, css: string) => `
-  @media ${mqForMedia(media)} {
-    ${css}
-  }
-`;
-
-export const boxShadow = `
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
-`;

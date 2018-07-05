@@ -1,9 +1,15 @@
-import styled from 'styled-components';
-import { lineHeight } from './theme';
 
-const Text = styled.p`
-  font-size: 1.2rem;
-  line-height: ${lineHeight};
-`;
+const Text: React.SFC = ({ children }) => (
+  <p>
+    {children}
+    <style jsx={true}>
+    {`
+      margin: 1.4rem auto;
+      font-size: 1rem;
+      line-height: 2rem;
+    `}
+    </style>
+  </p>
+);
 
 export default Text;

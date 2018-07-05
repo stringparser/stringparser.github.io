@@ -1,41 +1,43 @@
-import styled, { injectGlobal } from 'styled-components';
+import Head from 'next/head';
 
-import font from '../vendor/SourceSansPro';
-import { zIndex, forMedia } from './theme';
-
-injectGlobal`
-  ${font}
-
-  ${forMedia('tablet', `
-    html {
-      font-size: 14px;
-    }
-  `)}
-
-  html, body {
-    margin: 0;
-    font-family: 'Source Sans Pro', sans-serif;
-  }
-
-  color: rgba(0,0,0,0.8);
-  background-color: snow;
-
-  * {
-    box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-  }
-`;
-
-const Main = styled.main`
-  z-index: ${zIndex.background};
-`;
+import { zIndex } from './theme';
+import { FontHeadLink, contentFontStyle } from './Font';
 
 const Layout: React.SFC = ({ children }) => (
-  <>
-    <Main>
-      {children}
-    </Main>
-  </>
+  <main>
+    <Head>
+      <FontHeadLink />
+    </Head>
+
+    {children}
+
+    <style jsx={true}>
+    {`
+      z-index: ${zIndex.background};
+      position: relative;
+    `}
+    </style>
+
+    <style jsx={true} global={true}>
+      {`
+        html,
+        body {
+          margin: 0;
+        }
+
+        body {
+          ${contentFontStyle}
+          background-color: snow;
+        }
+
+        * {
+          z-index: ${zIndex.foreground};
+          transition: all 250ms ease-in-out;
+          box-sizing: border-box;
+        }
+      `}
+    </style>
+  </main>
 );
 
 export default Layout;
