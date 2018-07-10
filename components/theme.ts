@@ -3,7 +3,7 @@ export const colors = {
   dark: 'rgba(0,0,0,0.9)',
   dim: 'rgba(0,0,0,0.5)',
   dimmer: 'rgba(0,0,0,0.7)',
-  info: 'aliceblue',
+  info: '#9DC183',
   link: 'aliceblue',
   glass: 'rgba(0,0,0,0.15)',
   primary: 'black',

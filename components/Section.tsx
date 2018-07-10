@@ -2,9 +2,8 @@
 import styled from 'styled-components';
 
 import { forMedia, align } from './mixins';
-import { breakpoints, colors } from './theme';
+import { colors } from './theme';
 
-import { navbarHeight } from './Navbar';
 import Background, { parseBackgroundAsString } from './Background';
 
 const sectionTypes = {
@@ -12,6 +11,7 @@ const sectionTypes = {
     color: white;
   `,
   info: `
+    color: white;
     background-color: ${colors.info};
   `,
   secondary: `
@@ -27,18 +27,25 @@ type Props = {
   background?: string;
 };
 
-const Content = styled.div`
-  margin: 0 auto;
-  max-width: 960px;
+const Content = styled<Props, 'div'>('div')`
+
+  ${({ variation }) =>
+    forMedia('tablet', `
+      ${variation === 'primary' && `
+        margin: 0 auto;
+        max-width: 420px;
+      `}
+    `)
+  }
 `;
 
 const StyledSection = styled<Props, 'section'>('section')`
   position: relative;
-  min-height: 30rem;
-  ${align('center')}
+  min-height: 90vh;
+  ${align('v-center')}
 
-  padding: ${navbarHeight * 2}rem 2rem;
-  ${forMedia('tablet', `padding: 5rem;`)}
+  ${forMedia('phone', 'padding: 2rem;')}
+  ${forMedia('tablet', 'padding: 3rem;')}
 
   ${({ variation }) => sectionTypes[variation || 'secondary']}
 `;
@@ -49,7 +56,7 @@ const Section: React.SFC<Props> = ({
   ...props
 }) => (
   <StyledSection {...props}>
-    <Content>
+    <Content {...props}>
       {children}
     </Content>
     <Background {...parseBackgroundAsString(background)} />

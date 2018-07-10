@@ -16,7 +16,7 @@ export const bgColor = (v: ColorVariation) => `
 
 export const bgImage = (v: string) => `
   background: url('${v}') center center no-repeat;
-  background-size: cover;
+  background-size: contain;
 `;
 
 const alignment = {
@@ -31,6 +31,9 @@ const alignment = {
     flex-direction: column;
     justify-content: center;
   `,
+  't-center': `
+    text-align: center;
+  `,
 };
 
 export type Aligns = keyof (typeof alignment);
@@ -43,9 +46,12 @@ export const height = (v: string) => `
 
 export const list = () => `
   & > * {
-    margin-top: 1rem;
-    margin-right: 1rem;
+    margin-top: 1.5rem;
   }
+
+  ${forMedia('tablet', `
+      margin-right: 1.5rem;
+  `)}
 `;
 
 export const gutter = (n: number = 1) => `
@@ -77,7 +83,7 @@ export const content = () => `
   max-width: 960px;
 `;
 
-export const columns = (num?: number) => `
+export const columns = (basis?: string) => `
   width: 100%;
 
   display: flex;
@@ -91,9 +97,9 @@ export const columns = (num?: number) => `
   ${forMedia('tablet', `
     flex-direction: row;
 
-    ${num && `
+    ${basis && `
       & > * {
-        flex-basis: ${100 / num}%;
+        flex-basis: ${basis};
       }
     `}
   `)}

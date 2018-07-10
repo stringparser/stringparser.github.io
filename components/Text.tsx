@@ -6,7 +6,7 @@ const Text: React.SFC = ({ children }) => (
     {`
       margin: 1.4rem auto;
       font-size: 1rem;
-      line-height: 2rem;
+      line-height: 1.75rem;
     `}
     </style>
   </p>

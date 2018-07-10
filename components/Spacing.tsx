@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 type BRProps = {
-  height?: string;
+  height?: number;
 };
 
 export const BR = styled<BRProps, 'br'>('br')`
-  height: ${({ height }) => height || '1rem'};
+  height: ${({ height }) => `${height || 0.25}rem`};
   content: '';
   display: block;
 `;

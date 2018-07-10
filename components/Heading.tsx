@@ -9,14 +9,15 @@ const shared = `
 export const H1 = styled.h1`
   ${shared}
 
-  font-size: 2.2rem;
+  font-size: 2rem;
   line-height: 3rem;
 `;
 
 export const H2 = styled.h2`
   ${shared}
+  position: relative;
 
-  font-size: 2rem;
+  font-size: 1.8rem;
   line-height: 2.4rem;
 `;
 

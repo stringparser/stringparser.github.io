@@ -1,9 +1,12 @@
 import Head from 'next/head';
+import styled, { injectGlobal } from 'styled-components';
 
 import { zIndex } from './theme';
-import { FontHeadLink, contentFont } from './Font';
 import { forMedia } from './mixins';
-import { injectGlobal } from 'styled-components';
+import { FontHeadLink, contentFont } from './Font';
+
+import Navbar from './Navbar';
+import Footer from './Footer';
 
 injectGlobal`
   html {
@@ -27,9 +30,14 @@ injectGlobal`
 
   * {
     z-index: ${zIndex.foreground};
-    transition: all 250ms ease-in-out;
+    transition: all 100ms ease-in-out;
     box-sizing: border-box;
   }
+`;
+
+const Main = styled.main`
+  z-index: ${zIndex.background};
+  position: relative;
 `;
 
 const Layout: React.SFC = ({ children }) => (
@@ -43,14 +51,11 @@ const Layout: React.SFC = ({ children }) => (
       <FontHeadLink />
     </Head>
 
+    <Navbar />
+
     {children}
 
-    <style jsx={true}>
-    {`
-      z-index: ${zIndex.background};
-      position: relative;
-    `}
-    </style>
+    <Footer />
   </main>
 );
 
