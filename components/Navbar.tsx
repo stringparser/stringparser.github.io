@@ -2,6 +2,7 @@ import Link from 'next/link';
 import styled from 'styled-components';
 import { Component } from 'react';
 
+import Logo from './Logo';
 import { colors, zIndex } from './theme';
 
 export const navbarHeight = 4;
@@ -97,7 +98,7 @@ class Navbar extends Component {
       <Nav topPos={topPos}>
         <NavItem>
           <Link href="/">
-            <a>Logo</a>
+            <a><Logo /></a>
           </Link>
         </NavItem>
         <NavItem>

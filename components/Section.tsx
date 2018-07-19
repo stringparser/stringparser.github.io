@@ -1,8 +1,8 @@
 
 import styled from 'styled-components';
 
-import { forMedia, align, pulseAnimation, composeMixins } from './mixins';
 import { colors } from './theme';
+import { forMedia, align, composeMixins, boxShadow } from './mixins';
 
 import ChevronDown from './icon/ChevronDown';
 import Background, { parseBackgroundAsString } from './Background';
@@ -47,6 +47,8 @@ const StyledSection = styled<Props, 'section'>('section')`
   ${forMedia('tablet', 'padding: 5rem 3rem;')}
 
   ${({ variation }) => sectionTypes[variation || 'secondary']}
+
+  ${boxShadow()}
 `;
 
 const SectionIcon = styled.div`
@@ -55,11 +57,6 @@ const SectionIcon = styled.div`
   bottom: 1rem;
   position: absolute;
   text-align: center;
-
-  & svg {
-    opacity: 0.3;
-    animation: ${pulseAnimation} 5s ease-in-out infinite;
-  }
 `;
 
 const NextSectionLink: React.SFC<{ href?: string; }> = ({ href }) => (

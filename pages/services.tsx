@@ -2,6 +2,7 @@ import Text from '../components/Text';
 import Card from '../components/Card';
 import Layer from '../components/Layer';
 import Layout from '../components/Layout';
+import { BR } from '../components/Spacing';
 import Section from '../components/Section';
 import Background from '../components/Background';
 import { H2, H3 } from '../components/Heading';
@@ -12,13 +13,14 @@ const ContactPage = () => (
     <Section variation="primary" background="/static/img/laptop-pen-notebook.jpg">
       <Background color="rgba(0,0,0,0.6)" />
 
-      <Layer mixins={[align('t-center')]}>
-        <H3>
-          Reach out and say hello
-        </H3>
+      <Layer mixins={[align('v-center')]}>
         <H2>
-          SERVICES
+          Services
         </H2>
+        <Text>
+          Let's team up and build something together.
+        </Text>
+        <BR />
         <Layer mixins={[list(), columns()]}>
           <Card>
             <H3>Definition</H3>

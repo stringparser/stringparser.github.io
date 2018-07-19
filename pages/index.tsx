@@ -69,14 +69,15 @@ const IndexPage: React.SFC = () => (
           {`
             I focus in creating front-end client apps for web, \
             mobile or desktop. I also have experience coding back-end services and \
-            setting up infrastructure. If you need a site that looks good and \
-            works, this is the place.
+            setting up infrastructure.
           `}
           </Text>
 
-          <Layer>
+          <BR height={2} />
+
+          <Layer mixins={[align('t-center')]}>
             <Button>
-              Reach out
+              REACH OUT
             </Button>
           </Layer>
         </Layer>

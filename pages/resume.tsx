@@ -1,6 +1,9 @@
+import Layout from '../components/Layout';
 
 const ResumePage: React.SFC = () => (
-  <h1>my resume bitches</h1>
+  <Layout>
+    <h1>my resume bitches</h1>
+  </Layout>
 );
 
 export default ResumePage;

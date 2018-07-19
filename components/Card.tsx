@@ -1,7 +1,6 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { colors } from './theme';
 import { boxShadow, forMedia } from './mixins';
 
 const StyledCard = styled<CardProps, 'div'>('div')`
@@ -15,6 +14,7 @@ const StyledCard = styled<CardProps, 'div'>('div')`
 
   cursor: pointer;
   border: 2px solid snow;
+  background-color: rgba(0,0,0,0.7);
 
   &:hover {
     opacity: 1;
@@ -32,8 +32,10 @@ const StyledCard = styled<CardProps, 'div'>('div')`
     font-size: 20px;
     font-weight: bold;
     border-bottom-left-radius: 50%;
+  }
 
-    color: white;
+  &:hover:after {
+    content: '★';
   }
 
   ${boxShadow()}
