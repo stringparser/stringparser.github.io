@@ -8,7 +8,7 @@ import { BR } from '../components/Spacing';
 import Section from '../components/Section';
 import Highlight from '../components/text/Highlight';
 import { H1, H2 } from '../components/Heading';
-import { align, bgImage, gutter, forMedia } from '../components/mixins';
+import { align, gutter, forMedia } from '../components/mixins';
 
 const onMailto = (href: string) => () => window.location.assign(href);
 
@@ -49,17 +49,16 @@ const IndexPage: React.SFC = () => (
       mixins={[firstSectionStyles]}
       variation="primary"
       background="/static/video/typing-on-computer.mp4"
-      nextSectionLink="/#1"
+      nextSectionLink="/#focus"
     >
-      <BR height={4} />
       <H1>
         I’m <Highlight>Javier</Highlight>, freelance Software Engineer
       </H1>
     </Section>
 
     <Section
-      id="1"
-      nextSectionLink="/#2"
+      id="focus"
+      nextSectionLink="/#drive"
     >
       <Layer mixins={twoColumnSectionStyles}>
         <Layer mixins={[align('v-center'), gutter()]}>
@@ -71,22 +70,29 @@ const IndexPage: React.SFC = () => (
             I focus in creating front-end client apps for web, \
             mobile or desktop. I also have experience coding back-end services and \
             setting up infrastructure. If you need a site that looks good and \
-            works, this is the place just reach out.
+            works, this is the place.
           `}
           </Text>
+
+          <Layer>
+            <Button>
+              Reach out
+            </Button>
+          </Layer>
         </Layer>
         <Layer mixins={[align('center'), gutter()]}>
           <Image
             src="/static/img/frontend-dev-icon.png"
-            dim={200}
+            dim={150}
           />
         </Layer>
       </Layer>
     </Section>
 
     <Section
-      id="2"
+      id="drive"
       variation="info"
+      nextSectionLink="/#contact"
     >
       <Layer mixins={twoColumnSectionStyles}>
         <Layer mixins={[align('v-center'), gutter()]}>
@@ -109,7 +115,7 @@ const IndexPage: React.SFC = () => (
       </Layer>
     </Section>
 
-    <Section id="3">
+    <Section id="contact">
       <Layer mixins={twoColumnSectionStyles}>
         <Layer mixins={[align('v-center'), gutter()]}>
           <H2>

@@ -64,7 +64,7 @@ const SectionIcon = styled.div`
 
 const NextSectionLink: React.SFC<{ href?: string; }> = ({ href }) => (
   <SectionIcon>
-    <a href={href} style={{ color: 'white' }}>
+    <a href={href} style={{ color: 'currentColor' }}>
       <ChevronDown />
     </a>
   </SectionIcon>
