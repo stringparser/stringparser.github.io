@@ -4,6 +4,7 @@ export type BackgroundProps = {
   color?: string;
   image?: string;
   video?: string;
+  position?: React.CSSProperties['backgroundPosition'];
 };
 
 const sharedStyles = `
@@ -34,7 +35,7 @@ const BackgroundVideo: React.SFC<BackgroundProps> = ({ video, image }) => (
   </div>
 );
 
-const BackgroundImage: React.SFC<BackgroundProps> = ({ image }) => (
+const BackgroundImage: React.SFC<BackgroundProps> = ({ image, position }) => (
   <div>
     <style jsx={true}>
       {`
@@ -42,6 +43,10 @@ const BackgroundImage: React.SFC<BackgroundProps> = ({ image }) => (
         z-index: ${zIndex.background + 1};
         background: url('${image}') center center no-repeat;
         background-size: cover;
+        ${position
+          ? `background-position: ${position};`
+          : ''
+        }
       `}
     </style>
   </div>
@@ -69,10 +74,11 @@ const Background: React.SFC<BackgroundProps> = ({
   color,
   video,
   image,
+  position,
 }) => (
   <>
     {video && <BackgroundVideo video={video} />}
-    {image && <BackgroundImage image={image} />}
+    {image && <BackgroundImage image={image} position={position} />}
     {color && <BackgroundColor color={color} />}
   </>
 );

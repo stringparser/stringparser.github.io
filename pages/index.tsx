@@ -1,14 +1,14 @@
 import styled from 'styled-components';
 
 import Text from '../components/Text';
-import Card from '../components/Card';
 import Layer from '../components/Layer';
 import Layout from '../components/Layout';
+import Image from '../components/layout/Image';
 import { BR } from '../components/Spacing';
 import Section from '../components/Section';
-import { H1, H2, H3 } from '../components/Heading';
-import TriangleDownIcon from '../components/TriangleDownIcon';
-import { columns, list, align, bgImage, forMedia } from '../components/mixins';
+import Highlight from '../components/text/Highlight';
+import { H1, H2 } from '../components/Heading';
+import { align, bgImage, gutter, forMedia } from '../components/mixins';
 
 const onMailto = (href: string) => () => window.location.assign(href);
 
@@ -20,92 +20,100 @@ const Button = styled.button`
   background-color: transparent;
 `;
 
-const Hightlight = styled.span`
-  color: rgba(0, 0, 0, 0.8);
-  background-color: rgba(255, 255, 255, 0.6);
-`;
+const firstSectionStyles = forMedia('tablet', `
+  margin: 0 auto;
+  max-width: 420px;
+`);
 
-const SectionIcon = () => (
-  <Layer mixins={[align('center')]}>
-    <TriangleDownIcon />
-  </Layer>
-);
+const twoColumnSectionStyles = [
+  `
+    display: flex;
+    flex-direction: column;
+
+    & > * {
+      flex: 1;
+    }
+  `,
+  forMedia('tablet', `
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-between;
+  `),
+];
 
 const IndexPage: React.SFC = () => (
   <Layout>
-    <Section variation="primary" background="/static/video/typing-on-computer.mp4">
+
+    <Section
+      mixins={[firstSectionStyles]}
+      variation="primary"
+      background="/static/video/typing-on-computer.mp4"
+      nextSectionLink="/#1"
+    >
       <BR height={4} />
       <H1>
-        I’m <Hightlight>Javier</Hightlight>, freelance Software Engineer
+        I’m <Highlight>Javier</Highlight>, freelance Software Engineer
       </H1>
-      <Text>
-      {`
-        Focusing in front-end, with experience \
-        coding back-end services and setting up infrastructure.
-      `}
-      </Text>
     </Section>
-    <Section id="services" variation="info">
-      <Layer mixins={[align('t-center')]}>
-        <H2>
-          SERVICES
-        </H2>
-        <SectionIcon />
-        <BR height={2} />
-        <Layer mixins={[list(), columns()]}>
-          <Card>
-            <H3>Definition</H3>
-            <BR />
-            <Text>
-            {`
-              Project definition and planning. We’ll explore solutions \
-              to the problem at hand and build implementation paths so \
-              you can choose better.
-            `}
-            </Text>
-          </Card>
-          <Card>
-            <H3>Creation</H3>
-            <BR />
-            <Text>
-            {`
-              You have a fleshed out product, prototype, feature or \
-              story and now its time to make it happen. Great! We’ll \
-              review it together and get started.
-            `}
-            </Text>
-          </Card>
-          <Card>
-            <H3>Research</H3>
-            <BR />
-            <Text>
-            {`
-              Performance issues that have been lingering for a while? \
-              Is there an application area that you want to explore? \
-              Nice, let’s talk!
-            `}
-            </Text>
-          </Card>
+
+    <Section
+      id="1"
+      nextSectionLink="/#2"
+    >
+      <Layer mixins={twoColumnSectionStyles}>
+        <Layer mixins={[align('v-center'), gutter()]}>
+          <H2>
+            Main focus
+          </H2>
+          <Text>
+          {`
+            I focus in creating front-end client apps for web, \
+            mobile or desktop. I also have experience coding back-end services and \
+            setting up infrastructure. If you need a site that looks good and \
+            works, this is the place just reach out.
+          `}
+          </Text>
+        </Layer>
+        <Layer mixins={[align('center'), gutter()]}>
+          <Image
+            src="/static/img/frontend-dev-icon.png"
+            dim={200}
+          />
         </Layer>
       </Layer>
     </Section>
 
-    <Section id="contact">
-      <Layer
-        mixins={[
-          align('t-center'),
-          columns('auto'),
-        ]}
-      >
-        <Layer
-          mixins={[
-            'margin: 0 auto; width: 180px; height: 180px;',
-            bgImage('/static/img/chip.svg'),
-          ]}
-        />
-        <Layer mixins={['max-width: 420px;', align('v-center')]}>
+    <Section
+      id="2"
+      variation="info"
+    >
+      <Layer mixins={twoColumnSectionStyles}>
+        <Layer mixins={[align('v-center'), gutter()]}>
           <H2>
-            CONTACT
+            I thrive finding a path to bring ideas to life
+          </H2>
+          <Text>
+          {`
+            I studied Physics, so it always has been a passion for me \
+            to understand complex systems and find solutions that work.
+          `}
+          </Text>
+        </Layer>
+        <Layer mixins={[align('center'), gutter()]}>
+          <Image
+            src="/static/img/fractal-canopy.svg"
+            dim={200}
+          />
+        </Layer>
+      </Layer>
+    </Section>
+
+    <Section id="3">
+      <Layer mixins={twoColumnSectionStyles}>
+        <Layer mixins={[align('v-center'), gutter()]}>
+          <H2>
+            Contact
           </H2>
           <Text>
             You can contact me through{' '}
@@ -124,6 +132,12 @@ const IndexPage: React.SFC = () => (
               github
             </a>{' '}
           </Text>
+        </Layer>
+        <Layer mixins={[align('center'), gutter()]}>
+          <Image
+            src="/static/img/chip.svg"
+            dim={200}
+          />
         </Layer>
       </Layer>
     </Section>

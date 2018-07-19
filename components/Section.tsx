@@ -1,14 +1,17 @@
 
 import styled from 'styled-components';
 
-import { forMedia, align } from './mixins';
+import { forMedia, align, pulseAnimation, composeMixins } from './mixins';
 import { colors } from './theme';
 
+import ChevronDown from './icon/ChevronDown';
 import Background, { parseBackgroundAsString } from './Background';
 
 const sectionTypes = {
   primary: `
     color: white;
+    min-height: 90vh;
+    text-align: center;
   `,
   info: `
     color: white;
@@ -16,6 +19,7 @@ const sectionTypes = {
   `,
   secondary: `
     color: black;
+    background-color: rgba(0,0,0,0.05);
   `,
 };
 
@@ -23,35 +27,53 @@ type SectionType = keyof (typeof sectionTypes);
 
 type Props = {
   id?: string;
+  mixins?: string[];
   variation?: SectionType;
   background?: string;
+  nextSectionLink?: string;
+  backgroundPosition?: React.CSSProperties['backgroundPosition'];
 };
 
 const Content = styled<Props, 'div'>('div')`
-
-  ${({ variation }) =>
-    forMedia('tablet', `
-      ${variation === 'primary' && `
-        margin: 0 auto;
-        max-width: 420px;
-      `}
-    `)
-  }
+  ${({ mixins }) => composeMixins(mixins)}
 `;
 
 const StyledSection = styled<Props, 'section'>('section')`
   position: relative;
-  min-height: 90vh;
+  min-height: 80vh;
   ${align('v-center')}
 
   ${forMedia('phone', 'padding: 2rem;')}
-  ${forMedia('tablet', 'padding: 3rem;')}
+  ${forMedia('tablet', 'padding: 5rem 3rem;')}
 
   ${({ variation }) => sectionTypes[variation || 'secondary']}
 `;
 
+const SectionIcon = styled.div`
+  left: 0;
+  right: 0;
+  bottom: 1rem;
+  position: absolute;
+  text-align: center;
+
+  & svg {
+    opacity: 0.3;
+    animation: ${pulseAnimation} 5s ease-in-out infinite;
+  }
+`;
+
+const NextSectionLink: React.SFC<{ href?: string; }> = ({ href }) => (
+  <SectionIcon>
+    <a href={href} style={{ color: 'white' }}>
+      <ChevronDown />
+    </a>
+  </SectionIcon>
+);
+
 const Section: React.SFC<Props> = ({
   background,
+  nextSectionLink,
+  backgroundPosition,
   children,
   ...props
 }) => (
@@ -59,7 +81,11 @@ const Section: React.SFC<Props> = ({
     <Content {...props}>
       {children}
     </Content>
-    <Background {...parseBackgroundAsString(background)} />
+    <Background
+      position={backgroundPosition}
+      {...parseBackgroundAsString(background)}
+    />
+    {nextSectionLink && <NextSectionLink href={nextSectionLink} />}
   </StyledSection>
 );
 

@@ -8,8 +8,9 @@ const Footer = styled.footer`
 
   &:after {
     top: 0;
-    left: 33vw;
-    width: 33vw;
+    left: 2.5vw;
+    right: 2.5vw;
+    width: 95vw;
     content: '';
     position: absolute;
     border-top: 1px solid rgba(0,0,0,0.2);

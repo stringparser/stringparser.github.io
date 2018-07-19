@@ -4,9 +4,10 @@ const Text: React.SFC = ({ children }) => (
     {children}
     <style jsx={true}>
     {`
-      margin: 1.4rem auto;
+      margin: 1rem auto;
       font-size: 1rem;
       line-height: 1.75rem;
+      margin-bottom: 0;
     `}
     </style>
   </p>

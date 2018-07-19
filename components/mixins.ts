@@ -1,3 +1,4 @@
+import { keyframes } from 'styled-components';
 import { colors, Media, breakpoints } from './theme';
 
 export const composeMixins = (mixins?: string[]) => (
@@ -78,9 +79,9 @@ export const boxShadow = () => `
   box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
 `;
 
-export const content = () => `
+export const content = (width?: string) => `
   margin: 0 auto;
-  max-width: 960px;
+  max-width: ${width || '960px'};
 `;
 
 export const columns = (basis?: string) => `
@@ -103,4 +104,14 @@ export const columns = (basis?: string) => `
       }
     `}
   `)}
+`;
+
+export const pulseAnimation = keyframes`
+  from {
+    opacity: 0.3;
+  }
+
+  to {
+    opacity: 1;
+  }
 `;

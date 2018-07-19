@@ -6,6 +6,7 @@ type Props = {
 };
 
 const Layer = styled<Props, 'div'>('div')`
+  position: relative;
   ${({ mixins }) => composeMixins(mixins)}
 `;
 

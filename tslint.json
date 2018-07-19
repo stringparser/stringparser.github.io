@@ -17,7 +17,13 @@
         "esSpecCompliant": true
       }
     ],
-    "max-line-length": [true, 120],
+    "max-line-length": [
+      true,
+      {
+        "limit": 120,
+        "ignore-pattern": " d=\""
+      }
+    ],
     "ter-arrow-parens": false,
     "jsx-boolean-value": false,
     "no-unused-variable": [true, {"ignore-pattern": "^_"}],

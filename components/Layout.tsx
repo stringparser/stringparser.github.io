@@ -35,11 +35,6 @@ injectGlobal`
   }
 `;
 
-const Main = styled.main`
-  z-index: ${zIndex.background};
-  position: relative;
-`;
-
 const Layout: React.SFC = ({ children }) => (
   <main>
     <Head>

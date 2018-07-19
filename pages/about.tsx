@@ -1,8 +1,32 @@
+import Text from '../components/Text';
+import Layer from '../components/Layer';
 import Layout from '../components/Layout';
+import { H2 } from '../components/Heading';
 import Section from '../components/Section';
+import Background from '../components/Background';
+import { columns, content, align } from '../components/mixins';
 
 export default () => (
   <Layout>
+    <Section>
+      <Layer mixins={[columns()]}>
+        <Layer mixins={[content('420px'), align('center')]}>
+          <H2>I thrive finding a path to bring ideas to life</H2>
+          <Text>
+            {`
+            I studied Physics, so it always has been a passion for me \
+            to understand complex systems and find solutions that work.
+          `}
+          </Text>
+        </Layer>
+        <Layer>
+          <Background
+            image="/static/img/fractal-canopy.svg"
+            position="top"
+          />
+        </Layer>
+      </Layer>
+    </Section>
     <Section>
       My background is in Physics, I've studied it in{' '}
       <a href="//www.ugr.es">Granada</a> (Spain) and in{' '}

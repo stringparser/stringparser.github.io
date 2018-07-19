@@ -3,17 +3,13 @@ export const colors = {
   dark: 'rgba(0,0,0,0.9)',
   dim: 'rgba(0,0,0,0.5)',
   dimmer: 'rgba(0,0,0,0.7)',
-  info: '#9DC183',
+  info: '#26262a',
   link: 'aliceblue',
   glass: 'rgba(0,0,0,0.15)',
   primary: 'black',
   inverted: 'snow',
   secondary: '#6d6d6d',
   'dim-inverted': 'rgba(255,255,255,0.8)',
-};
-
-export const gutter = {
-  topLevel: '1rem 2rem',
 };
 
 export const zIndex = {
