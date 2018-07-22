@@ -39,6 +39,8 @@ injectGlobal`
   }
 `;
 
+const logoIcon = '/static/img/favicon.ico';
+
 const Layout: React.SFC = ({ children }) => (
   <main>
     <Head>
@@ -46,7 +48,13 @@ const Layout: React.SFC = ({ children }) => (
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       <title>stringparser</title>
       <meta name="viewport" content="width=device-width" user-scalable="no" />
-      <meta name="description" content="Software Engineer. code, music and physics" />
+      <meta name="description" content="Freelance Software Engineer. code, music and physics" />
+      <link rel="icon" sizes="128x128" href={logoIcon} />
+      <meta name="theme-color" content="white" />
+      <link rel="apple-touch-icon" href={logoIcon} />
+      <meta name="viewport" content="width=device-width" user-scalable="no" />
+      <meta name="description" content="Bespoke services for artists and exhibitions" />
+      <link rel="icon" type="image/x-icon" href="/static/favicon.ico" />
       <FontHeadLink />
     </Head>
 

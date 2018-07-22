@@ -84,7 +84,7 @@ export const forMedia = (media: Media, css: string) => `
 `;
 
 export const boxShadow = (color: string = 'rgba(0,0,0,0.1)') => `
-  box-shadow: 1px 1px 1px 1px ${color};
+  box-shadow: 0 0 2px 0 ${color};
 `;
 
 export const content = (width?: string) => `

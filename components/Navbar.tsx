@@ -113,14 +113,17 @@ class Navbar extends Component {
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/contact">
-              <a>Contact</a>
+            <Link href="/portfolio">
+              <a>portfolio</a>
             </Link>
             <Link href="/resume">
-              <a>Resume</a>
+              <a>resume</a>
             </Link>
             <Link href="/about">
-              <a>About</a>
+              <a>about</a>
+            </Link>
+            <Link href="/contact">
+              <a>contact</a>
             </Link>
           </NavItem>
         </Nav>

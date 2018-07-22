@@ -8,12 +8,12 @@ import Card from '../components/Card';
 import Layer from '../components/Layer';
 import Image from '../components/layout/Image';
 import { BR } from '../components/Spacing';
-import EmailLink from '../components/link/EmailLink';
 import Background from '../components/Background';
 import { H2, H3 } from '../components/Heading';
 import { align, list, columns, gutter } from '../components/mixins';
 
 import { twoColumnSectionStyles } from './index';
+import EmailMeLink from '../components/link/EmailMeLink';
 
 const ContactPage: React.SFC = () => (
   <Layout>
@@ -91,7 +91,7 @@ const ContactPage: React.SFC = () => (
           </H2>
 
           <Text>
-            You can always send me an <EmailLink /> or message me via{' '}
+            You can always send me an <EmailMeLink /> or message me via{' '}
             <a href={LINKEDIN_URL}>linkedin</a>,{' '}
             <a href={TWITTER_URL}>twitter</a> or{' '}
             <a href={GITHUB_URL}>github</a>.

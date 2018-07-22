@@ -1,13 +1,13 @@
 import Text from '../components/Text';
 import Layer from '../components/Layer';
 import Image from '../components/layout/Image';
-import { BR } from '../components/Spacing';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
+import { BR } from '../components/Spacing';
 import Highlight from '../components/text/Highlight';
 import { H1, H2 } from '../components/Heading';
-import { zIndex, breakpoints } from '../components/theme';
-import EmailMeButton from '../components/button/EmailMeButton';
+import { zIndex } from '../components/theme';
+import EmailMeLink from '../components/link/EmailMeLink';
 import ContactButton from '../components/button/ContactButton';
 import { align, gutter, forMedia } from '../components/mixins';
 
@@ -15,8 +15,7 @@ export const firstSectionStyles = [
   `
     ${gutter(2)}
     margin: 0 auto;
-    max-width: ${breakpoints.phone};
-    text-align: center;
+    text-align: left;
   `,
 ];
 
@@ -47,8 +46,9 @@ const IndexPage: React.SFC = () => (
     >
       <Layer mixins={firstSectionStyles}>
         <H1>
-          I’m <Highlight>Javier</Highlight>,{' '}
-          freelance Software Engineer based in Berlin
+          I’m <Highlight>Javier</Highlight>,<BR />
+          freelance Software Engineer<BR />
+          based in Berlin
         </H1>
       </Layer>
     </Section>
@@ -113,13 +113,13 @@ const IndexPage: React.SFC = () => (
 
     <Section id="contact">
       <Layer mixins={twoColumnSectionStyles}>
-        <Layer mixins={['flex: 2;', gutter()]}>
+        <Layer mixins={[align('v-center'), gutter()]}>
           <H2>
             Say hello
           </H2>
           <Text>
             You can contact me through{' '}
-            <EmailMeButton />{' '}
+            <EmailMeLink />{' '}
             or find me as @stringparser in{' '}
             <a href="https://www.linkedin.com/in/stringparser">
               linkedin
@@ -136,7 +136,7 @@ const IndexPage: React.SFC = () => (
         <Layer mixins={[align('center'), gutter()]}>
           <Image
             src="/static/img/chip.svg"
-            dim={150}
+            dim={200}
           />
         </Layer>
       </Layer>

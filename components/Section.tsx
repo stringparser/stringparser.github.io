@@ -14,7 +14,7 @@ const sectionTypes = {
   `,
   light: `
     color: black;
-    background-color: white;
+    background-color: #f8f9fa;
   `,
   primary: `
     color: white;
@@ -61,7 +61,7 @@ const SectionIcon = styled.div`
   svg {
     padding: 5px;
     border-radius: 50%;
-    background-color: rgba(0,0,0,0.8);
+    background-color: #000;
     box-shadow: 0 1px 1px 1px white;
   }
 `;
