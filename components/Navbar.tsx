@@ -113,9 +113,6 @@ class Navbar extends Component {
             </Link>
           </NavItem>
           <NavItem>
-            <Link href="/services">
-              <a>Services</a>
-            </Link>
             <Link href="/contact">
               <a>Contact</a>
             </Link>

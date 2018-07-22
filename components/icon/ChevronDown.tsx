@@ -6,7 +6,7 @@ type TriangleIconProps = {
 };
 
 const TriangleDownIcon: React.SFC<TriangleIconProps> = ({
-  size = 32,
+  size = 24,
   width = size,
   height = size,
 }) => (

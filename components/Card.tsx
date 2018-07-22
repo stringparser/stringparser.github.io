@@ -1,56 +1,53 @@
 import Link from 'next/link';
 import styled from 'styled-components';
 
-import { boxShadow, forMedia } from './mixins';
+import { boxShadow, gutter, forMedia } from './mixins';
 
 const StyledCard = styled<CardProps, 'div'>('div')`
-  padding: 1rem;
-  position: relative;
-
-  ${forMedia('tablet', `
-    padding: 1.5rem;
-    max-width: 25vw;
-  `)}
+  ${gutter(2)}
 
   cursor: pointer;
-  border: 2px solid snow;
-  background-color: rgba(0,0,0,0.7);
+  position: relative;
+
+  color: black;
+  border: 2px solid rgba(0,0,0,0.7);
+  background-color: white;
 
   &:hover {
-    opacity: 1;
-
-    color: black;
-    background-color: white;
+    color: white;
+    background-color: rgba(0,0,0,0.8);
   }
 
   &:after {
-    top: 0%;
-    right: 0%;
-    padding: 0.25rem 0.5rem;
-    content: '☆';
+    top: 0.5rem;
+    right: 1rem;
+    content: '+';
     position: absolute;
-    font-size: 20px;
+    font-size: 1.5rem;
     font-weight: bold;
-    border-bottom-left-radius: 50%;
-  }
-
-  &:hover:after {
-    content: '★';
   }
 
   ${boxShadow()}
+
+  ${forMedia('tablet', `
+    max-width: 300px;
+  `)}
 `;
+
+const onClick = (href: string) => () => {
+  if (href) {
+    window.location.assign(href);
+  }
+};
 
 type CardProps = {
   href?: string;
 };
 
 const Card: React.SFC<CardProps> = ({ href, children }) => (
-  <Link href={href}>
-    <StyledCard>
-      {children}
-    </StyledCard>
-  </Link>
+  <StyledCard onClick={onClick(href)}>
+    {children}
+  </StyledCard>
 );
 
 export default Card;

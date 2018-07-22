@@ -1,34 +1,29 @@
-import styled from 'styled-components';
-
 import Text from '../components/Text';
 import Layer from '../components/Layer';
-import Layout from '../components/Layout';
 import Image from '../components/layout/Image';
 import { BR } from '../components/Spacing';
+import Layout from '../components/Layout';
 import Section from '../components/Section';
 import Highlight from '../components/text/Highlight';
 import { H1, H2 } from '../components/Heading';
+import { zIndex, breakpoints } from '../components/theme';
+import EmailMeButton from '../components/button/EmailMeButton';
+import ContactButton from '../components/button/ContactButton';
 import { align, gutter, forMedia } from '../components/mixins';
 
-const onMailto = (href: string) => () => window.location.assign(href);
+export const firstSectionStyles = [
+  `
+    ${gutter(2)}
+    margin: 0 auto;
+    max-width: ${breakpoints.phone};
+    text-align: center;
+  `,
+];
 
-const Button = styled.button`
-  apperance: none;
-
-  border: 1px solid rgba(0,0,0,0.7);
-  border-radius: 4px;
-  background-color: transparent;
-`;
-
-const firstSectionStyles = forMedia('tablet', `
-  margin: 0 auto;
-  max-width: 420px;
-`);
-
-const twoColumnSectionStyles = [
+export const twoColumnSectionStyles = [
   `
     display: flex;
-    flex-direction: column;
+    flex-direction: column-reverse;
 
     & > * {
       flex: 1;
@@ -46,18 +41,21 @@ const IndexPage: React.SFC = () => (
   <Layout>
 
     <Section
-      mixins={[firstSectionStyles]}
       variation="primary"
       background="/static/video/typing-on-computer.mp4"
       nextSectionLink="/#focus"
     >
-      <H1>
-        I’m <Highlight>Javier</Highlight>, freelance Software Engineer
-      </H1>
+      <Layer mixins={firstSectionStyles}>
+        <H1>
+          I’m <Highlight>Javier</Highlight>,{' '}
+          freelance Software Engineer based in Berlin
+        </H1>
+      </Layer>
     </Section>
 
     <Section
       id="focus"
+      mixins={[`z-index: ${zIndex.navbar};`]}
       nextSectionLink="/#drive"
     >
       <Layer mixins={twoColumnSectionStyles}>
@@ -67,19 +65,14 @@ const IndexPage: React.SFC = () => (
           </H2>
           <Text>
           {`
-            I focus in creating front-end client apps for web, \
-            mobile or desktop. I also have experience coding back-end services and \
+            Creating front-end applications for web, \
+            mobile or desktop is my main focus and I \
+            have experience coding back-end services and \
             setting up infrastructure.
           `}
           </Text>
 
-          <BR height={2} />
-
-          <Layer mixins={[align('t-center')]}>
-            <Button>
-              REACH OUT
-            </Button>
-          </Layer>
+          <ContactButton />
         </Layer>
         <Layer mixins={[align('center'), gutter()]}>
           <Image
@@ -106,6 +99,8 @@ const IndexPage: React.SFC = () => (
             to understand complex systems and find solutions that work.
           `}
           </Text>
+
+          <ContactButton />
         </Layer>
         <Layer mixins={[align('center'), gutter()]}>
           <Image
@@ -118,15 +113,13 @@ const IndexPage: React.SFC = () => (
 
     <Section id="contact">
       <Layer mixins={twoColumnSectionStyles}>
-        <Layer mixins={[align('v-center'), gutter()]}>
+        <Layer mixins={['flex: 2;', gutter()]}>
           <H2>
-            Contact
+            Say hello
           </H2>
           <Text>
             You can contact me through{' '}
-            <Button onClick={onMailto('mailto:stringparser@gmail.com')}>
-              email
-            </Button>{' '}
+            <EmailMeButton />{' '}
             or find me as @stringparser in{' '}
             <a href="https://www.linkedin.com/in/stringparser">
               linkedin
@@ -143,7 +136,7 @@ const IndexPage: React.SFC = () => (
         <Layer mixins={[align('center'), gutter()]}>
           <Image
             src="/static/img/chip.svg"
-            dim={200}
+            dim={150}
           />
         </Layer>
       </Layer>

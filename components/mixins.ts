@@ -35,6 +35,9 @@ const alignment = {
   't-center': `
     text-align: center;
   `,
+  't-left': `
+    text-align: left;
+  `,
 };
 
 export type Aligns = keyof (typeof alignment);
@@ -46,20 +49,25 @@ export const height = (v: string) => `
 `;
 
 export const list = () => `
-  & > * {
-    margin-top: 1.5rem;
-  }
+
+  ${forMedia('phone', `
+    & > *:not(:first-child) {
+      margin-top: 1.5rem;
+    }
+  `)}
 
   ${forMedia('tablet', `
-      margin-right: 1.5rem;
+    & > *:not(:first-child) {
+      margin-left: 1.5rem;
+    }
   `)}
 `;
 
 export const gutter = (n: number = 1) => `
-  padding: ${1 * n}rem ${1.5 * n}rem;
+  padding: ${1 * n}rem;
 
   ${forMedia('desktop', `
-    padding: ${2 * n}rem ${4 * n}rem;
+    padding: ${2 * n}rem;
   `)}
 `;
 
@@ -75,8 +83,8 @@ export const forMedia = (media: Media, css: string) => `
   }
 `;
 
-export const boxShadow = () => `
-  box-shadow: 1px 1px 1px 1px rgba(0,0,0,0.1);
+export const boxShadow = (color: string = 'rgba(0,0,0,0.1)') => `
+  box-shadow: 1px 1px 1px 1px ${color};
 `;
 
 export const content = (width?: string) => `
@@ -89,7 +97,7 @@ export const columns = (basis?: string) => `
 
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
 
   & > * {
     flex: 1;

@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import styled, { injectGlobal } from 'styled-components';
+import { injectGlobal } from 'styled-components';
 
 import { zIndex } from './theme';
 import { forMedia } from './mixins';
@@ -21,6 +21,7 @@ injectGlobal`
   html,
   body {
     margin: 0;
+    font-smoothing: subpixel-antialiased;
   }
 
   body {
@@ -30,8 +31,11 @@ injectGlobal`
 
   * {
     z-index: ${zIndex.foreground};
-    transition: all 100ms ease-in-out;
     box-sizing: border-box;
+  }
+
+  a {
+    color: currentColor;
   }
 `;
 

@@ -1,21 +1,25 @@
 
 import styled from 'styled-components';
 
-import { colors } from './theme';
+import { colors, zIndex } from './theme';
 import { forMedia, align, composeMixins, boxShadow } from './mixins';
 
 import ChevronDown from './icon/ChevronDown';
 import Background, { parseBackgroundAsString } from './Background';
 
 const sectionTypes = {
-  primary: `
-    color: white;
-    min-height: 90vh;
-    text-align: center;
-  `,
   info: `
     color: white;
     background-color: ${colors.info};
+  `,
+  light: `
+    color: black;
+    background-color: white;
+  `,
+  primary: `
+    color: white;
+    text-align: center;
+    background-color: rgba(0,0,0,0.8);
   `,
   secondary: `
     color: black;
@@ -34,34 +38,37 @@ type Props = {
   backgroundPosition?: React.CSSProperties['backgroundPosition'];
 };
 
-const Content = styled<Props, 'div'>('div')`
-  ${({ mixins }) => composeMixins(mixins)}
-`;
-
 const StyledSection = styled<Props, 'section'>('section')`
   position: relative;
-  min-height: 80vh;
-  ${align('v-center')}
-
-  ${forMedia('phone', 'padding: 2rem;')}
-  ${forMedia('tablet', 'padding: 5rem 3rem;')}
-
-  ${({ variation }) => sectionTypes[variation || 'secondary']}
 
   ${boxShadow()}
+  ${align('v-center')}
+  ${forMedia('phone', 'padding: 2rem;')}
+  ${forMedia('tablet', 'padding: 3rem;')}
+  ${({ variation }) => sectionTypes[variation || 'secondary']}
+
+  ${({ mixins }) => composeMixins(mixins)}
 `;
 
 const SectionIcon = styled.div`
   left: 0;
   right: 0;
-  bottom: 1rem;
+  bottom: -13px;
   position: absolute;
   text-align: center;
+  z-index: ${zIndex.modal};
+
+  svg {
+    padding: 5px;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.8);
+    box-shadow: 0 1px 1px 1px white;
+  }
 `;
 
 const NextSectionLink: React.SFC<{ href?: string; }> = ({ href }) => (
   <SectionIcon>
-    <a href={href} style={{ color: 'currentColor' }}>
+    <a href={href} style={{ color: 'white' }}>
       <ChevronDown />
     </a>
   </SectionIcon>
@@ -75,9 +82,7 @@ const Section: React.SFC<Props> = ({
   ...props
 }) => (
   <StyledSection {...props}>
-    <Content {...props}>
-      {children}
-    </Content>
+    {children}
     <Background
       position={backgroundPosition}
       {...parseBackgroundAsString(background)}
