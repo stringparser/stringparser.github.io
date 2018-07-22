@@ -54,9 +54,9 @@ const SectionIcon = styled.div`
   left: 0;
   right: 0;
   bottom: -13px;
+  z-index: ${zIndex.foreground};
   position: absolute;
   text-align: center;
-  z-index: ${zIndex.modal};
 
   svg {
     padding: 5px;

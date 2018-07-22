@@ -4,6 +4,7 @@ import { createRef, Component, RefObject } from 'react';
 
 import Logo from './Logo';
 import { zIndex } from './theme';
+import { gutter } from './mixins';
 
 export const navbarHeight = 4;
 
@@ -29,7 +30,11 @@ const Nav = styled<NavProps, 'nav'>('nav')`
   background-color: rgba(255, 255, 255, 0.9);
 `;
 
-const NavItem = styled.div`
+type NavItemProps = {
+  highlightLinks?: boolean;
+};
+
+const NavItem = styled<NavItemProps, 'div'>('div')`
   &:first-of-type {
     text-align: left;
   }
@@ -43,6 +48,20 @@ const NavItem = styled.div`
     font-weight: bold;
     text-decoration: none;
   }
+
+  ${({ highlightLinks }) => highlightLinks && `
+    a {
+      background:
+        linear-gradient(
+          to bottom,
+          transparent 0%,
+          transparent 60%,
+          #fbf36d 60%,
+          #fbf36d 100%
+        )
+      ;
+    }
+  `}
 
   a:hover {
     text-decoration: underline;
@@ -112,7 +131,7 @@ class Navbar extends Component {
               <a><Logo /></a>
             </Link>
           </NavItem>
-          <NavItem>
+          <NavItem highlightLinks={true}>
             <Link href="/portfolio">
               <a>portfolio</a>
             </Link>
