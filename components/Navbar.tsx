@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import styled from 'styled-components';
-import { Component } from 'react';
+import { createRef, Component, RefObject } from 'react';
 
 import Logo from './Logo';
-import { colors, zIndex } from './theme';
+import { zIndex } from './theme';
 
 export const navbarHeight = 4;
 
 type NavProps = {
-  topPos?: number
+  topPos?: number;
+  position?: 'static' | 'fixed';
 };
 
 const Nav = styled<NavProps, 'nav'>('nav')`
@@ -18,21 +19,14 @@ const Nav = styled<NavProps, 'nav'>('nav')`
   height: ${navbarHeight}rem;
   padding: 1rem 2rem;
   z-index: ${zIndex.navbar};
-  position: fixed;
+  position: ${({ position }) => position || 'static' };
   transition: top 500ms ease-in-out;
 
   display: flex;
   align-items: center;
   justify-content: space-between;
 
-  color: white;
-  background-color: rgba(0, 0, 0, 0.3);
-
-  &:hover {
-    a {
-      opacity: 0.5;
-    }
-  }
+  background-color: rgba(255, 255, 255, 0.9);
 `;
 
 const NavItem = styled.div`
@@ -51,8 +45,7 @@ const NavItem = styled.div`
   }
 
   a:hover {
-    color: ${colors.link};
-    opacity: 1;
+    text-decoration: underline;
   }
 
   a:not(:last-child) {
@@ -63,6 +56,8 @@ const NavItem = styled.div`
 type State = {
   topPos: number;
   scrollY: number;
+  position: NavProps['position'];
+  isPastFirstSection: boolean;
 };
 
 class Navbar extends Component {
@@ -70,15 +65,26 @@ class Navbar extends Component {
   state: State = {
     topPos: 0,
     scrollY: 0,
+    position: 'static',
+    isPastFirstSection: false,
   };
+
+  navRef: RefObject<HTMLElement>;
+
+  constructor(props?: Object, context?: Object) {
+    super(props, context);
+    this.navRef = createRef();
+  }
 
   onScroll = () => {
     const scrollY = window.scrollY;
-    const nextState = { scrollY, topPos: 0 };
+    const navHeight = this.navRef.current.offsetHeight;
 
-    if (scrollY > this.state.scrollY) {
-      nextState.topPos = -100;
-    }
+    const nextState = {
+      scrollY,
+      topPos: scrollY > this.state.scrollY ? -100 : 0,
+      position: scrollY > navHeight ? 'fixed' : 'static',
+    };
 
     this.setState(nextState);
   }
@@ -92,30 +98,40 @@ class Navbar extends Component {
   }
 
   render() {
-    const { topPos } = this.state;
+    const { topPos, position } = this.state;
 
     return (
-      <Nav topPos={topPos}>
-        <NavItem>
-          <Link href="/">
-            <a><Logo /></a>
-          </Link>
-        </NavItem>
-        <NavItem>
-          <Link href="/services">
-            <a>Services</a>
-          </Link>
-          <Link href="/contact">
-            <a>Contact</a>
-          </Link>
-          <Link href="/resume">
-            <a>Resume</a>
-          </Link>
-          <Link href="/about">
-            <a>About</a>
-          </Link>
-        </NavItem>
-      </Nav>
+      <>
+        <Nav
+          topPos={topPos}
+          position={position}
+          innerRef={this.navRef}
+        >
+          <NavItem>
+            <Link href="/">
+              <a><Logo /></a>
+            </Link>
+          </NavItem>
+          <NavItem>
+            <Link href="/services">
+              <a>Services</a>
+            </Link>
+            <Link href="/contact">
+              <a>Contact</a>
+            </Link>
+            <Link href="/resume">
+              <a>Resume</a>
+            </Link>
+            <Link href="/about">
+              <a>About</a>
+            </Link>
+          </NavItem>
+        </Nav>
+        {position === 'fixed'
+          ? <div style={{ height:`${navbarHeight}rem` }} />
+          : null
+        }
+      </>
     );
   }
 }
