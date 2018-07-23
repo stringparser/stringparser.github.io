@@ -27,6 +27,9 @@ const alignment = {
     flex-direction: column;
     justify-content: center;
   `,
+  'v-top': `
+    display: block;
+  `,
   'v-center': `
     display: flex;
     flex-direction: column;

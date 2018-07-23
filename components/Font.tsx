@@ -1,6 +1,6 @@
 
 export const headerFont = `
-  font-family: 'Arial Black', Gadget, sans-serif;
+  font-family: 'Merriweather Sans', sans-serif;
 `;
 
 export const contentFont = `
@@ -10,6 +10,6 @@ export const contentFont = `
 export const FontHeadLink = () => (
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Lato"
+    href="https://fonts.googleapis.com/css?family=Lato|Merriweather+Sans:400,700,800"
   />
 );

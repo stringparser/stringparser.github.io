@@ -635,6 +635,10 @@
     reflect-metadata "^0.1.12"
     tslib "^1.8.1"
 
+"@stringparser/cv@https://github.com/stringparser/cv.git":
+  version "0.1.0"
+  resolved "https://github.com/stringparser/cv.git#2efdd5bbc1816485f9a63953bb0b105c5a44806e"
+
 "@types/next@^6.0.3":
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/@types/next/-/next-6.0.3.tgz#d41a055ff67c8ea8873bc3627e8ff302c3b39ba0"

@@ -7,8 +7,8 @@ import { BR } from '../components/Spacing';
 import Highlight from '../components/text/Highlight';
 import { H1, H2 } from '../components/Heading';
 import { zIndex } from '../components/theme';
-import EmailMeLink from '../components/link/EmailMeLink';
 import ContactButton from '../components/button/ContactButton';
+import ContactSection from '../components/section/ContactSection';
 import { align, gutter, forMedia } from '../components/mixins';
 
 export const firstSectionStyles = [
@@ -86,7 +86,6 @@ const IndexPage: React.SFC = () => (
     <Section
       id="drive"
       variation="info"
-      nextSectionLink="/#contact"
     >
       <Layer mixins={twoColumnSectionStyles}>
         <Layer mixins={[align('v-center'), gutter()]}>
@@ -111,36 +110,7 @@ const IndexPage: React.SFC = () => (
       </Layer>
     </Section>
 
-    <Section id="contact">
-      <Layer mixins={twoColumnSectionStyles}>
-        <Layer mixins={[align('v-center'), gutter()]}>
-          <H2>
-            Say hello
-          </H2>
-          <Text>
-            You can contact me through{' '}
-            <EmailMeLink />{' '}
-            or find me as @stringparser in{' '}
-            <a href="https://www.linkedin.com/in/stringparser">
-              linkedin
-            </a>,{' '}
-            <a href="https://twitter.com/stringparser">
-              twitter
-            </a>{' '}
-            or{' '}
-            <a href="https://github.com/stringparser">
-              github
-            </a>{' '}
-          </Text>
-        </Layer>
-        <Layer mixins={[align('center'), gutter()]}>
-          <Image
-            src="/static/img/chip.svg"
-            dim={200}
-          />
-        </Layer>
-      </Layer>
-    </Section>
+    <ContactSection id="contact" />
   </Layout>
 );
 

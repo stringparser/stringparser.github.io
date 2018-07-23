@@ -4,7 +4,6 @@ import { createRef, Component, RefObject } from 'react';
 
 import Logo from './Logo';
 import { zIndex } from './theme';
-import { gutter } from './mixins';
 
 export const navbarHeight = 4;
 
@@ -28,6 +27,10 @@ const Nav = styled<NavProps, 'nav'>('nav')`
   justify-content: space-between;
 
   background-color: rgba(255, 255, 255, 0.9);
+
+  @media print {
+    display: none;
+  }
 `;
 
 type NavItemProps = {
