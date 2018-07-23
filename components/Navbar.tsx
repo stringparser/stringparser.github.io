@@ -125,8 +125,8 @@ class Navbar extends Component {
             </Link>
           </NavItem>
           <NavItem highlightLinks={true}>
-            <Link prefetch href={`${BACKEND_URL}/resume`}>
-              <a>resume</a>
+            <Link prefetch href={`${BACKEND_URL}/cv`}>
+              <a>cv</a>
             </Link>
             <Link prefetch href={`${BACKEND_URL}/about`}>
               <a>about</a>

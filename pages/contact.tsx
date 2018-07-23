@@ -30,7 +30,7 @@ const ContactPage: React.SFC = () => (
           Contact
         </H1>
         <Text>
-          Let's team up and build something together.
+          Let's team up and build together.
         </Text>
       </Layer>
     </Section>

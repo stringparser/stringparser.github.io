@@ -18,7 +18,7 @@ const sectionTypes = {
   `,
   primary: `
     color: white;
-    min-height: 50vh;
+    min-height: 70vh;
     text-align: center;
     background-color: rgba(0,0,0,0.8);
   `,

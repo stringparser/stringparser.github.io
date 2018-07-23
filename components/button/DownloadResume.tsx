@@ -4,7 +4,7 @@ import resume from '@stringparser/cv';
 const DownloadResume: React.SFC = ({ children }) => (
   <a href={resume.pdf}>
     <Button>
-      {children || 'Download pdf version'}
+      {children || 'Download PDF version'}
     </Button>
   </a>
 );

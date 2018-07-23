@@ -43,7 +43,7 @@ const AboutPage: React.SFC = () => (
   <Layout>
     <Section
       variation="primary"
-      background="/static/img/physics-exam.jpg"
+      background="/static/img/rotating-sky.jpg"
       nextSectionLink="#me"
     >
       <Background color="rgba(0,0,0,0.6)" />

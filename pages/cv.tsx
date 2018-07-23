@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as resume from '@stringparser/cv';
+import * as cv from '@stringparser/cv';
 
 import Text from '../components/Text';
 import Layer from '../components/Layer';
@@ -35,12 +35,9 @@ const resumeSectionStyles = [
 
       ul {
         margin: 0;
+        padding: 0;
       }
     `)}
-
-    ul {
-      padding: 0;
-    }
 
     h2 {
       margin-bottom: 2rem;
@@ -58,13 +55,18 @@ const resumeSectionStyles = [
 
 const UL = styled<{ isUnstyled?: boolean; }, 'ul'>('ul')`
   ${({ isUnstyled }) => isUnstyled && `
+    padding: unset;
     list-style-type: none;
   `}
 `;
 
 const ResumePage: React.SFC = () => (
   <Layout>
-    <Section variation="primary" background="/static/img/laptop-pen-notebook.jpg">
+    <Section
+      variation="primary"
+      background="/static/img/laptop-pen-notebook.jpg"
+      nextSectionLink="#cv"
+    >
       <Background color="rgba(0,0,0,0.6)" />
 
       <Layer mixins={[align('t-center')]}>
@@ -78,7 +80,10 @@ const ResumePage: React.SFC = () => (
       </Layer>
     </Section>
 
-    <Section mixins={resumeSectionStyles}>
+    <Section
+      id="cv"
+      mixins={resumeSectionStyles}
+    >
       <Layer>
         <H3>
           Languages
@@ -86,7 +91,7 @@ const ResumePage: React.SFC = () => (
       </Layer>
       <Layer>
         <UL>
-          {resume.languages
+          {cv.languages
             .map((el, index) =>
               <li key={index}>{el.name}: {el.level}</li>
             )
@@ -103,7 +108,7 @@ const ResumePage: React.SFC = () => (
       </Layer>
       <Layer>
         <UL>
-          {resume.technologies
+          {cv.technologies
             .map((el, index) => <li key={index}>{el}</li>)
           }
         </UL>
@@ -118,7 +123,7 @@ const ResumePage: React.SFC = () => (
       </Layer>
       <Layer>
         <UL isUnstyled={true}>
-        {resume.experience.map((el, index) => {
+        {cv.experience.map((el, index) => {
           return (
             <li key={index}>
               <Text>
@@ -155,7 +160,7 @@ const ResumePage: React.SFC = () => (
       </Layer>
       <Layer>
         <UL isUnstyled={true}>
-          {resume.education.map((el, index) => {
+          {cv.education.map((el, index) => {
             return (
               <li key={index}>
                 <Text>
