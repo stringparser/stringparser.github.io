@@ -1,11 +1,5 @@
 {
-  "now": {
-    "name": "stringparser-web",
-    "alias": [
-      "stringparser.co"
-    ]
-  },
-  "name": "stringparser.co",
+  "name": "stringparser-web",
   "main": "index.js",
   "version": "1.0.0",
   "author": "Javier Carrillo Milla <stringparser@gmail.com>",
@@ -15,7 +9,9 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "export": "yarn build && rm -rf node_modules/out && next export",
+    "deploy": "NODE_ENV=production yarn export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
   },
   "dependencies": {
     "@stringparser/cv": "https://github.com/stringparser/cv.git",
