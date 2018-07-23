@@ -54,7 +54,7 @@ const ContactPage: React.SFC = () => (
 
           <Text>
             {`
-              Planning is finished and now its time to make it happen. Great! \
+              Planning finished and now is time to write code. Great! \
               Let's review it together and get started.
             `}
           </Text>
@@ -69,10 +69,10 @@ const ContactPage: React.SFC = () => (
           <BR height={1} />
 
           <Text>
-            {`
-              Performance issues to investigate? \
-              Is there an application area that you want to explore?
-            `}
+          {`
+            Is there any performance issues or an application area \
+            you want to investigate?
+          `}
           </Text>
 
           <BR height={2} />

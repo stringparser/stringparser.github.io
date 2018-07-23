@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import styled from 'styled-components';
 
 import { boxShadow, gutter, forMedia } from './mixins';
@@ -15,7 +14,12 @@ const StyledCard = styled<CardProps, 'div'>('div')`
 
   &:hover {
     color: white;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.7);
+
+    a {
+      color: #fbf36d;
+      background: unset;
+    }
   }
 
   &:after {
@@ -31,7 +35,19 @@ const StyledCard = styled<CardProps, 'div'>('div')`
 
   ${forMedia('tablet', `
     max-width: 300px;
+    ${gutter(1)}
   `)}
+
+  a {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 60%,
+      #fbf36d 60%,
+      #fbf36d 100%
+    );
+    text-decoration: none;
+  }
 `;
 
 const onClick = (href: string) => () => {
