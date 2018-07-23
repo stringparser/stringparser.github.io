@@ -11,7 +11,7 @@
     "build": "next build",
     "start": "next start",
     "export": "yarn build && rm -rf node_modules/out && next export",
-    "deploy": "NODE_ENV=production yarn export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin gh-pages"
+    "deploy": "NODE_ENV=production yarn export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin master"
   },
   "dependencies": {
     "@stringparser/cv": "https://github.com/stringparser/cv.git",
