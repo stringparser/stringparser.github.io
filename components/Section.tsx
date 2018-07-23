@@ -40,8 +40,6 @@ type Props = {
 };
 
 const StyledSection = styled<Props, 'section'>('section')`
-  position: relative;
-
   ${boxShadow()}
   ${align('v-center')}
   ${forMedia('phone', 'padding: 2rem;')}
@@ -49,6 +47,8 @@ const StyledSection = styled<Props, 'section'>('section')`
   ${({ variation }) => sectionTypes[variation || 'secondary']}
 
   ${({ mixins }) => composeMixins(mixins)}
+
+  position: relative;
 `;
 
 const SectionIcon = styled.div`

@@ -72,8 +72,8 @@ const ContactPage: React.SFC = () => (
           <BR />
 
           <Text>
-            Is there any performance issues or an application area{' '}
-            you want to investigate?
+            You found some performance issues, an application area{' '}
+            or a topic you want to investigate.
           </Text>
 
           <BR height={1} />

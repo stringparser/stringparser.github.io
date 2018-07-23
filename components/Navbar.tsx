@@ -5,6 +5,7 @@ import { createRef, Component, RefObject } from 'react';
 import Logo from './Logo';
 import { zIndex } from './theme';
 import { linkHighlight } from './mixins';
+import { BACKEND_URL } from '../config/client';
 
 export const navbarHeight = 4;
 
@@ -124,13 +125,13 @@ class Navbar extends Component {
             </Link>
           </NavItem>
           <NavItem highlightLinks={true}>
-            <Link prefetch href="/resume">
+            <Link prefetch href={`${BACKEND_URL}/resume`}>
               <a>resume</a>
             </Link>
-            <Link prefetch href="/about">
+            <Link prefetch href={`${BACKEND_URL}/about`}>
               <a>about</a>
             </Link>
-            <Link prefetch href="/contact">
+            <Link prefetch href={`${BACKEND_URL}/contact`}>
               <a>contact</a>
             </Link>
           </NavItem>

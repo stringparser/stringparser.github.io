@@ -1,3 +1,5 @@
+import styled from 'styled-components';
+
 import { zIndex, colors } from './theme';
 import { BACKEND_URL } from '../config/client';
 
@@ -13,8 +15,6 @@ const sharedStyles = `
   left: 0;
   right: 0;
   bottom: 0;
-  content: '';
-  overflow: hidden;
   position: absolute;
 `;
 
@@ -24,13 +24,14 @@ const BackgroundVideo: React.SFC<BackgroundProps> = ({ video, image }) => (
       src={video}
       loop={true}
       muted={true}
-      poster={image}
       autoPlay={true}
     />
     <style jsx={true}>
       {`
-        ${sharedStyles}
-        z-index: ${zIndex.background};
+        video {
+          ${sharedStyles}
+          z-index: ${zIndex.background};
+        }
       `}
     </style>
   </div>
@@ -71,17 +72,27 @@ export const parseBackgroundAsString = (input: string) => ({
   video: /mp\d$/.test(input) ? input : undefined,
 });
 
+const BackgroundContainer = styled.div`
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: ${zIndex.foreground - 1};
+  position: absolute;
+  overflow: hidden;
+`;
+
 const Background: React.SFC<BackgroundProps> = ({
   color,
   video,
   image,
   position,
 }) => (
-  <>
+  <BackgroundContainer>
     {video && <BackgroundVideo video={`${BACKEND_URL}${video}`} />}
     {image && <BackgroundImage image={`${BACKEND_URL}${image}`} position={position} />}
     {color && <BackgroundColor color={color} />}
-  </>
+  </BackgroundContainer>
 );
 
 export default Background;
