@@ -6,6 +6,6 @@ exports = module.exports = {
   TWITTER_URL: 'https://twitter.com/stringparser',
   LINKEDIN_URL: 'https://www.linkedin.com/in/stringparser',
   BACKEND_URL: process.env.NODE_ENV === 'production'
-    ? 'https://stringparser.github.io/stringparser.co'
+    ? 'https://stringparser.github.io'
     : ''
 };
