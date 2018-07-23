@@ -3,7 +3,6 @@ import Layer from '../components/Layer';
 import Image from '../components/layout/Image';
 import Layout from '../components/Layout';
 import Section from '../components/Section';
-import { BR } from '../components/Spacing';
 import Highlight from '../components/text/Highlight';
 import { H1, H2 } from '../components/Heading';
 import { zIndex, breakpoints } from '../components/theme';
@@ -13,9 +12,10 @@ import { align, gutter, forMedia } from '../components/mixins';
 
 export const firstSectionStyles = [
   `
-    ${gutter(2)}
+    ${gutter(1)}
+    ${align('center')}
+
     margin: 0 auto;
-    text-align: left;
   `,
 ];
 
