@@ -48,6 +48,7 @@ const StyledSection = styled<Props, 'section'>('section')`
 
   ${({ mixins }) => composeMixins(mixins)}
 
+  z-index: ${zIndex.section};
   position: relative;
 `;
 
@@ -55,15 +56,15 @@ const SectionIcon = styled.div`
   left: 0;
   right: 0;
   bottom: -13px;
-  z-index: ${zIndex.foreground};
+  z-index: ${zIndex.section + 1};
   position: absolute;
   text-align: center;
 
   svg {
     padding: 5px;
+    box-shadow: 0 1px 1px 1px white;
     border-radius: 50%;
     background-color: #000;
-    box-shadow: 0 1px 1px 1px white;
   }
 `;
 

@@ -55,11 +55,7 @@ const IndexPage: React.SFC = () => (
       </Layer>
     </Section>
 
-    <Section
-      id="focus"
-      mixins={[`z-index: ${zIndex.navbar};`]}
-      nextSectionLink="/#drive"
-    >
+    <Section id="focus">
       <Layer mixins={twoColumnSectionStyles}>
         <Layer mixins={[align('v-center'), gutter()]}>
           <H2>
@@ -85,10 +81,7 @@ const IndexPage: React.SFC = () => (
       </Layer>
     </Section>
 
-    <Section
-      id="drive"
-      variation="info"
-    >
+    <Section id="drive" variation="info">
       <Layer mixins={twoColumnSectionStyles}>
         <Layer mixins={[align('v-center'), gutter()]}>
           <H2>

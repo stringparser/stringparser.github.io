@@ -15,6 +15,7 @@ export const colors = {
 export const zIndex = {
   background: 0,
   foreground: 100,
+  section: 101,
   navbar: 200,
   modal: 300,
   dialog: 400,

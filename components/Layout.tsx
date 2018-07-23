@@ -1,13 +1,13 @@
 import Head from 'next/head';
 import { injectGlobal } from 'styled-components';
 
-import { zIndex } from './theme';
 import { forMedia } from './mixins';
 import { FontHeadLink, contentFont } from './Font';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { BACKEND_URL } from '../config/client.js';
+import { zIndex } from './theme';
 
 injectGlobal`
   html {
