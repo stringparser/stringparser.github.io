@@ -1,4 +1,5 @@
 import { zIndex, colors } from './theme';
+import { BACKEND_URL } from '../config/client';
 
 export type BackgroundProps = {
   color?: string;
@@ -77,8 +78,8 @@ const Background: React.SFC<BackgroundProps> = ({
   position,
 }) => (
   <>
-    {video && <BackgroundVideo video={video} />}
-    {image && <BackgroundImage image={image} position={position} />}
+    {video && <BackgroundVideo video={`${BACKEND_URL}${video}`} />}
+    {image && <BackgroundImage image={`${BACKEND_URL}${image}`} position={position} />}
     {color && <BackgroundColor color={color} />}
   </>
 );

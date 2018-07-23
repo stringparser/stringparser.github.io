@@ -1,12 +1,14 @@
 import styled from 'styled-components';
 
-import { boxShadow, gutter, forMedia } from './mixins';
+import { boxShadow, gutter, forMedia, linkHighlight } from './mixins';
 
 const StyledCard = styled<CardProps, 'div'>('div')`
-  ${gutter(2)}
+  ${gutter(1.5)}
 
   cursor: pointer;
+  margin: 0 auto;
   position: relative;
+  max-width: 300px;
 
   color: black;
   border: 2px solid rgba(0,0,0,0.7);
@@ -32,22 +34,7 @@ const StyledCard = styled<CardProps, 'div'>('div')`
   }
 
   ${boxShadow()}
-
-  ${forMedia('tablet', `
-    max-width: 300px;
-    ${gutter(1)}
-  `)}
-
-  a {
-    background: linear-gradient(
-      to bottom,
-      transparent 0%,
-      transparent 60%,
-      #fbf36d 60%,
-      #fbf36d 100%
-    );
-    text-decoration: none;
-  }
+  ${linkHighlight()}
 `;
 
 const onClick = (href: string) => () => {

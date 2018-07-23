@@ -5,21 +5,6 @@ export const composeMixins = (mixins?: string[]) => (
   mixins && mixins.join('\n')
 );
 
-type ColorVariation = keyof (typeof colors);
-
-export const color = (v: ColorVariation) => `
-  color: ${colors[v]};
-`;
-
-export const bgColor = (v: ColorVariation) => `
-  background-color: ${colors[v]};
-`;
-
-export const bgImage = (v: string) => `
-  background: url('${v}') center center no-repeat;
-  background-size: contain;
-`;
-
 const alignment = {
   center: `
     display: flex;
@@ -124,5 +109,23 @@ export const pulseAnimation = keyframes`
 
   to {
     opacity: 1;
+  }
+`;
+
+export const linkHighlight = () => `
+  a {
+    background: linear-gradient(
+      to bottom,
+      transparent 0%,
+      transparent 60%,
+      #fbf36d 60%,
+      #fbf36d 100%
+    );
+
+    text-decoration: none;
+  }
+
+  a:hover {
+    text-decoration: underline;
   }
 `;

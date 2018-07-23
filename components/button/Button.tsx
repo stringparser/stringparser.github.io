@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { forMedia } from '../mixins';
 
 const styles = {
   inline: `
@@ -10,7 +11,11 @@ const styles = {
     width: 100%;
     margin: 2rem 0 0 0;
     padding: 1rem;
-    max-width: 320px;
+    font-size: 0.85rem;
+
+    ${forMedia('tablet', `
+      max-width: 320px;
+    `)}
   `,
 };
 
@@ -25,11 +30,9 @@ const Button = styled<ButtonProps, 'button'>('button')`
 
   ${({ variation = 'fullWidth' }) => styles[variation]}
 
-  border: 1px solid currentColor;
-  border-radius: 4px;
+  border: 2px solid currentColor;
 
   color: currentColor;
-  font-weight: bold;
   background-color: transparent;
 `;
 

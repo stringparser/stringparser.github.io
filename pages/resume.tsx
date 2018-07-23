@@ -4,17 +4,22 @@ import * as resume from '@stringparser/cv';
 import Text from '../components/Text';
 import Layer from '../components/Layer';
 import Layout from '../components/Layout';
+import { HR } from '../components/Spacing';
 import Section from '../components/Section';
 import Background from '../components/Background';
 import { H1, H4, H3 } from '../components/Heading';
+import DownloadResume from '../components/button/DownloadResume';
+import { breakpoints } from '../components/theme';
 import { align, forMedia } from '../components/mixins';
-
-console.log(resume);
 
 const resumeSectionStyles = [
   `
     display: flex;
     flex-direction: column;
+
+    margin: 0 auto;
+    max-width: ${breakpoints.tablet};
+    background-color: snow;
 
     ${forMedia('tablet', `
       flex-direction: row;
@@ -25,12 +30,15 @@ const resumeSectionStyles = [
       }
 
       & > *:not(:first-child) {
-        flex: 3;
+        flex: 2;
+      }
+
+      ul {
+        margin: 0;
       }
     `)}
 
     ul {
-      margin: 0;
       padding: 0;
     }
 
@@ -66,6 +74,7 @@ const ResumePage: React.SFC = () => (
         <Text>
           Find out what I've been up to.
         </Text>
+        <DownloadResume />
       </Layer>
     </Section>
 
@@ -170,7 +179,7 @@ const ResumePage: React.SFC = () => (
             );
           })}
           <li>
-            <hr />
+            <HR />
             <Text>
               UGR: University of Granada <br />
               LMU: Ludwig-Maximilians-Universität <br />

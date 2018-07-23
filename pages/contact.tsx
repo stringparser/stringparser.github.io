@@ -17,7 +17,12 @@ import EmailMeLink from '../components/link/EmailMeLink';
 
 const ContactPage: React.SFC = () => (
   <Layout>
-    <Section variation="primary" background="/static/img/laptop-pen-notebook.jpg">
+    <Section
+      variation="primary"
+      background="/static/img/red-phone.jpg"
+      backgroundPosition="top center"
+      nextSectionLink="#services"
+    >
       <Background color="rgba(0,0,0,0.6)" />
 
       <Layer mixins={[align('t-center')]}>
@@ -30,7 +35,7 @@ const ContactPage: React.SFC = () => (
       </Layer>
     </Section>
 
-    <Section>
+    <Section id="services">
       <Layer mixins={[align('center')]}>
         <H2>
           Services
@@ -93,8 +98,8 @@ const ContactPage: React.SFC = () => (
         </Layer>
         <Layer mixins={[align('center'), gutter()]}>
           <Image
-            src="/static/img/chip.svg"
             dim={200}
+            src="/static/img/chip.svg"
           />
         </Layer>
       </Layer>

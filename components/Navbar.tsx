@@ -4,6 +4,7 @@ import { createRef, Component, RefObject } from 'react';
 
 import Logo from './Logo';
 import { zIndex } from './theme';
+import { linkHighlight } from './mixins';
 
 export const navbarHeight = 4;
 
@@ -26,7 +27,7 @@ const Nav = styled<NavProps, 'nav'>('nav')`
   align-items: center;
   justify-content: space-between;
 
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.95);
 
   @media print {
     display: none;
@@ -52,19 +53,7 @@ const NavItem = styled<NavItemProps, 'div'>('div')`
     text-decoration: none;
   }
 
-  ${({ highlightLinks }) => highlightLinks && `
-    a {
-      background:
-        linear-gradient(
-          to bottom,
-          transparent 0%,
-          transparent 60%,
-          #fbf36d 60%,
-          #fbf36d 100%
-        )
-      ;
-    }
-  `}
+  ${({ highlightLinks }) => highlightLinks && linkHighlight()}
 
   a:hover {
     text-decoration: underline;
@@ -130,21 +119,18 @@ class Navbar extends Component {
           innerRef={this.navRef}
         >
           <NavItem>
-            <Link href="/">
+            <Link prefetch href="/">
               <a><Logo /></a>
             </Link>
           </NavItem>
           <NavItem highlightLinks={true}>
-            <Link href="/portfolio">
-              <a>portfolio</a>
-            </Link>
-            <Link href="/resume">
+            <Link prefetch href="/resume">
               <a>resume</a>
             </Link>
-            <Link href="/about">
+            <Link prefetch href="/about">
               <a>about</a>
             </Link>
-            <Link href="/contact">
+            <Link prefetch href="/contact">
               <a>contact</a>
             </Link>
           </NavItem>

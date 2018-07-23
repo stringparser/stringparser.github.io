@@ -16,7 +16,7 @@ type Props = React.HtmlHTMLAttributes<HTMLElement>;
 const ContactSection: React.SFC<Props> = (props) => (
   <Section variation="light" {...props}>
     <Layer mixins={twoColumnSectionStyles}>
-      <Layer mixins={['flex: 2;', gutter()]}>
+      <Layer mixins={[align('v-center'), gutter()]}>
         <H2>
           Say hello
         </H2>
