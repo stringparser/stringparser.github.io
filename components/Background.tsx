@@ -42,7 +42,7 @@ const BackgroundImage: React.SFC<BackgroundProps> = ({ image, position }) => (
     <style jsx={true}>
       {`
         ${sharedStyles}
-        z-index: ${zIndex.background + 1};
+        z-index: ${zIndex.background};
         background: url('${image}') center center no-repeat;
         background-size: cover;
         ${position
@@ -59,7 +59,7 @@ const BackgroundColor: React.SFC<BackgroundProps> = ({ color }) => (
     <style jsx={true}>
       {`
         ${sharedStyles}
-        z-index: ${zIndex.background + 2};
+        z-index: ${zIndex.background + 1};
         background-color: ${color};
       `}
     </style>
@@ -77,7 +77,7 @@ const BackgroundContainer = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: ${zIndex.foreground - 1};
+  z-index: ${zIndex.background};
   position: absolute;
   overflow: hidden;
 `;

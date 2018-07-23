@@ -83,11 +83,13 @@ const Section: React.SFC<Props> = ({
   ...props
 }) => (
   <StyledSection {...props}>
-    {children}
     <Background
       position={backgroundPosition}
       {...parseBackgroundAsString(background)}
     />
+
+    {children}
+
     {nextSectionLink && <NextSectionLink href={nextSectionLink} />}
   </StyledSection>
 );
