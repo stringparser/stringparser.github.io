@@ -31,7 +31,7 @@ injectGlobal`
   }
 
   * {
-    z-index: ${zIndex.foreground};
+    z-index: 0;
     box-sizing: border-box;
   }
 
