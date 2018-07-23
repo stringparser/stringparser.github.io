@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { BACKEND_URL } from '../config/client';
 
 type LogoProps = {
   dim?: number;
@@ -18,7 +19,7 @@ const Logo = styled<LogoProps, 'div'>('div')`
 
 const _Logo: React.SFC<LogoProps> = (props) => (
   <Logo {...props} >
-    <img src="/static/img/logo.png" />
+    <img src={`${BACKEND_URL}/static/img/logo.png`} />
   </Logo>
 );
 
