@@ -7,7 +7,6 @@ import { FontHeadLink, contentFont } from './Font';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { BACKEND_URL } from '../config/client.js';
-import { zIndex } from './theme';
 
 injectGlobal`
   html {
@@ -22,7 +21,6 @@ injectGlobal`
   html,
   body {
     margin: 0;
-    font-smoothing: subpixel-antialiased;
   }
 
   body {

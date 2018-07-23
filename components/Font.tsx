@@ -10,6 +10,6 @@ export const contentFont = `
 export const FontHeadLink = () => (
   <link
     rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Lato|Merriweather+Sans:400,700,800"
+    href="https://fonts.googleapis.com/css?family=Lato:100,400,700|Merriweather:400,700"
   />
 );
