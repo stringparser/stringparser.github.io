@@ -1,4 +1,8 @@
 const path = require('path');
 const withTypescript = require('@zeit/next-typescript');
 
-exports = module.exports = withTypescript();
+const { BACKEND_URL } = require('./config/client');
+
+exports = module.exports = withTypescript({
+  assetPrefix: BACKEND_URL
+});

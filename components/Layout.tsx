@@ -7,7 +7,7 @@ import { FontHeadLink, contentFont } from './Font';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { BACKEND_URL } from '../config/client';
+import { BACKEND_URL } from '../config/client.js';
 
 injectGlobal`
   html {

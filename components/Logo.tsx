@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BACKEND_URL } from '../config/client';
+import { BACKEND_URL } from '../config/client.js';
 
 type LogoProps = {
   dim?: number;
