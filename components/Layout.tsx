@@ -6,7 +6,7 @@ import { FontHeadLink, contentFont } from './Font';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { BACKEND_URL } from '../config/client.js';
+import { BACKEND_URL, META_KEYWORDS } from '../config/client.js';
 
 injectGlobal`
   html {
@@ -43,8 +43,9 @@ const logo = `${BACKEND_URL}/static/img/logo.png`;
 const Layout: React.SFC = ({ children }) => (
   <main>
     <Head>
-      <meta charSet="utf-8" />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+
+      <meta charSet="utf-8" />
       <meta name="theme-color" content="white" />
       <meta name="viewport" content="width=device-width" user-scalable="no" />
 
@@ -52,7 +53,8 @@ const Layout: React.SFC = ({ children }) => (
       <link rel="apple-touch-icon" href={logo} />
       <link rel="icon" type="image/png" href={logo} />
 
-      <title>stringparser</title>
+      <title>Javier Carrillo Milla</title>
+      <meta name="keywords" content={META_KEYWORDS} />
       <meta name="description" content="Freelance Software Engineer" />
     </Head>
 

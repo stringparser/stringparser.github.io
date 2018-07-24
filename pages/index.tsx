@@ -98,7 +98,7 @@ const IndexPage: React.SFC = () => (
         <Layer mixins={[align('center'), gutter()]}>
           <Image
             dim={200}
-            src="/static/img/fractal-canopy.svg"
+            src="/static/img/fractal-canopy.png"
           />
         </Layer>
       </Layer>

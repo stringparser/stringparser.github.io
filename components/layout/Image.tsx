@@ -14,10 +14,7 @@ const Image = styled<ImageProps, 'img'>('img')`
   max-height: ${({ dim, height }) => height || dim || 150}px;
 `;
 
-const _Image: React.SFC<ImageProps> = ({
-  src,
-  ...props
-}) => (
+const _Image: React.SFC<ImageProps> = ({ src, ...props }) => (
   <Image src={`${BACKEND_URL}${src}`} {...props} />
 );
 

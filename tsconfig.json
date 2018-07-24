@@ -10,13 +10,11 @@
     ],
     "jsx": "preserve",
     "paths": {
-      "components/*": [
-        "src/components/*"
-      ]
+      "@components/*": [ "components/*" ]
     },
     "module": "esnext",
     "target": "esnext",
-    "baseUrl": ".",
+    "baseUrl": "src",
     "allowJs": true,
     "sourceMap": true,
     "skipLibCheck": true,

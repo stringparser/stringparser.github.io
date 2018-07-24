@@ -30,7 +30,7 @@ const ContactSection: React.SFC<Props> = (props) => (
       </Layer>
       <Layer mixins={[align('center'), gutter()]}>
         <Image
-          src="/static/img/chip.svg"
+          src="/static/img/chip.png"
           dim={200}
         />
       </Layer>

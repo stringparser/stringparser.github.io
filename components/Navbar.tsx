@@ -50,7 +50,6 @@ const NavItem = styled<NavItemProps, 'div'>('div')`
 
   a {
     color: currentColor;
-    font-weight: bold;
     text-decoration: none;
   }
 
@@ -126,13 +125,13 @@ class Navbar extends Component {
           </NavItem>
           <NavItem highlightLinks={true}>
             <Link prefetch href={`${BACKEND_URL}/cv`}>
-              <a>CV</a>
+              <a>cv</a>
             </Link>
             <Link prefetch href={`${BACKEND_URL}/about`}>
-              <a>ABOUT</a>
+              <a>about</a>
             </Link>
             <Link prefetch href={`${BACKEND_URL}/contact`}>
-              <a>CONTACT</a>
+              <a>contact</a>
             </Link>
           </NavItem>
         </Nav>
