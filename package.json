@@ -9,10 +9,10 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "clean": "rm -rf dist/**/* && touch dist/.nojekyll",
+    "clean": "rm -rf docs/**/* && touch docs/.nojekyll",
     "build": "yarn clean && next build",
-    "export": "yarn build && NODE_ENV=production next export -o dist && git add dist && git commit -m 'new site version'",
-    "deploy": "yarn export && git push origin `git subtree split --prefix=dist`:gh-pages --force"
+    "export": "yarn build && NODE_ENV=production next export -o docs && git add docs && git commit -m 'new site version'",
+    "deploy": "yarn export && git push origin `git subtree split --prefix=docs`:gh-pages --force"
   },
   "devDependencies": {
     "@stringparser/cv": "https://github.com/stringparser/cv.git",
