@@ -1,4 +1,6 @@
 import styled from 'styled-components';
+
+import Image from './layout/Image';
 import { iconSize } from './theme';
 import { BACKEND_URL } from '../config/client.js';
 
@@ -20,7 +22,7 @@ const Logo = styled<LogoProps, 'div'>('div')`
 
 const _Logo: React.SFC<LogoProps> = (props) => (
   <Logo {...props} >
-    <img src={`${BACKEND_URL}/static/img/logo.png`} />
+    <Image src="/static/img/logo.png" />
   </Logo>
 );
 
