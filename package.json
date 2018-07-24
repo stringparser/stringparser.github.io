@@ -8,12 +8,12 @@
   "repository": "git@github.com:stringparser/stringparser.co.git",
   "scripts": {
     "dev": "next",
-    "build": "next build",
     "start": "next start",
-    "export": "yarn build && rm -rf node_modules/out && next export",
-    "deploy": "NODE_ENV=production yarn export && touch out/.nojekyll && git add -f out/ && git commit -m \"Deploy Next.js to gh-pages\" && git subtree push --prefix out origin master"
+    "build": "rm -rf dist && touch dist/.nojekyll && next build",
+    "export": "yarn build && NODE_ENV=production next export dist",
+    "deploy": "yarn export && cd dist && git commit -m 'deploy' && git push origin master && cd .."
   },
-  "dependencies": {
+  "devDependencies": {
     "@stringparser/cv": "https://github.com/stringparser/cv.git",
     "@types/next": "^6.0.3",
     "@types/react": "^16.4.4",
@@ -28,8 +28,5 @@
     "tslint-config-airbnb": "^5.9.2",
     "tslint-react": "^3.6.0",
     "typescript": "^2.9.2"
-  },
-  "devDependencies": {
-    "now": "^11.2.5"
   }
 }
