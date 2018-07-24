@@ -2,12 +2,12 @@ import Text from '../components/Text';
 import Layer from '../components/Layer';
 import Image from '../components/layout/Image';
 import Layout from '../components/Layout';
-import Section from '../components/Section';
+import Section from '../components/section/Section';
 import Highlight from '../components/text/Highlight';
 import { H1, H2 } from '../components/Heading';
-import { zIndex, breakpoints } from '../components/theme';
 import ContactButton from '../components/button/ContactButton';
 import ContactSection from '../components/section/ContactSection';
+import { breakpoints } from '../components/theme';
 import { align, gutter, forMedia } from '../components/mixins';
 
 export const firstSectionStyles = [
@@ -46,7 +46,6 @@ const IndexPage: React.SFC = () => (
     <Section
       variation="primary"
       background="/static/video/typing-on-computer.mp4"
-      nextSectionLink="/#focus"
     >
       <Layer mixins={firstSectionStyles}>
         <H1>

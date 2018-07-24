@@ -1,3 +1,4 @@
+import { iconSize } from '../theme';
 
 type TriangleIconProps = {
   size?: number;
@@ -6,7 +7,7 @@ type TriangleIconProps = {
 };
 
 const TriangleDownIcon: React.SFC<TriangleIconProps> = ({
-  size = 24,
+  size = iconSize,
   width = size,
   height = size,
 }) => (

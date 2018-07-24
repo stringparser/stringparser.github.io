@@ -1,5 +1,5 @@
 
-import Section from '../Section';
+import Section from './Section';
 
 import { gutter, align } from '../mixins';
 import { twoColumnSectionStyles } from '../../pages';

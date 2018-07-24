@@ -2,7 +2,7 @@ import Text from '../components/Text';
 import Layer from '../components/Layer';
 import Layout from '../components/Layout';
 import { H1 } from '../components/Heading';
-import Section from '../components/Section';
+import Section from '../components/section/Section';
 import Background from '../components/Background';
 import { breakpoints } from '../components/theme';
 import { align, gutter } from '../components/mixins';

@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { iconSize } from './theme';
 import { BACKEND_URL } from '../config/client.js';
 
 type LogoProps = {
@@ -11,7 +12,7 @@ const Logo = styled<LogoProps, 'div'>('div')`
     max-height: 100%;
   }
 
-  ${({ dim = 32 }) => `
+  ${({ dim = iconSize }) => `
     width: ${dim}px;
     height: ${dim}px;
   `}

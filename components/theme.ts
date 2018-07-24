@@ -30,3 +30,5 @@ export const breakpoints = {
 };
 
 export type Media = keyof (typeof breakpoints);
+
+export const iconSize = 32;

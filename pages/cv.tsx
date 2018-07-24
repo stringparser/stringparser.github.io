@@ -5,7 +5,7 @@ import Text from '../components/Text';
 import Layer from '../components/Layer';
 import Layout from '../components/Layout';
 import { HR } from '../components/Spacing';
-import Section from '../components/Section';
+import Section from '../components/section/Section';
 import Background from '../components/Background';
 import { H1, H4, H3 } from '../components/Heading';
 import DownloadResume from '../components/button/DownloadResume';

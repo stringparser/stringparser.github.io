@@ -1,5 +1,5 @@
 import Layout from '../components/Layout';
-import Section from '../components/Section';
+import Section from '../components/section/Section';
 
 import { EMAIL, LINKEDIN_URL, TWITTER_URL, GITHUB_URL } from '../config/client';
 

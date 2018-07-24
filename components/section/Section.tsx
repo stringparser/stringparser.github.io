@@ -1,11 +1,11 @@
 
 import styled from 'styled-components';
 
-import { colors, zIndex } from './theme';
-import { forMedia, align, composeMixins, boxShadow } from './mixins';
+import { colors, zIndex } from '../theme';
+import { forMedia, align, composeMixins, boxShadow } from '../mixins';
 
-import ChevronDown from './icon/ChevronDown';
-import Background, { parseBackgroundAsString } from './Background';
+import Background, { parseBackgroundAsString } from '../Background';
+import SectionLink from './SectionLink';
 
 const sectionTypes = {
   info: `
@@ -18,7 +18,6 @@ const sectionTypes = {
   `,
   primary: `
     color: white;
-    min-height: 70vh;
     text-align: center;
     background-color: rgba(0,0,0,0.8);
   `,
@@ -28,9 +27,9 @@ const sectionTypes = {
   `,
 };
 
-type SectionType = keyof (typeof sectionTypes);
+export type SectionType = keyof (typeof sectionTypes);
 
-type Props = {
+export type SectionProps = {
   id?: string;
   mixins?: string[];
   variation?: SectionType;
@@ -39,7 +38,7 @@ type Props = {
   backgroundPosition?: React.CSSProperties['backgroundPosition'];
 };
 
-const StyledSection = styled<Props, 'section'>('section')`
+const Section = styled<SectionProps, 'section'>('section')`
   ${boxShadow()}
   ${align('v-center')}
   ${forMedia('phone', 'padding: 2rem;')}
@@ -52,38 +51,14 @@ const StyledSection = styled<Props, 'section'>('section')`
   position: relative;
 `;
 
-const SectionIcon = styled.div`
-  left: 0;
-  right: 0;
-  bottom: -13px;
-  z-index: ${zIndex.section + 1};
-  position: absolute;
-  text-align: center;
-
-  svg {
-    padding: 5px;
-    box-shadow: 0 1px 1px 1px white;
-    border-radius: 50%;
-    background-color: #000;
-  }
-`;
-
-const NextSectionLink: React.SFC<{ href?: string; }> = ({ href }) => (
-  <SectionIcon>
-    <a href={href} style={{ color: 'white' }}>
-      <ChevronDown />
-    </a>
-  </SectionIcon>
-);
-
-const Section: React.SFC<Props> = ({
+const _Section: React.SFC<SectionProps> = ({
   background,
   nextSectionLink,
   backgroundPosition,
   children,
   ...props
 }) => (
-  <StyledSection {...props}>
+  <Section {...props}>
     <Background
       position={backgroundPosition}
       {...parseBackgroundAsString(background)}
@@ -91,8 +66,8 @@ const Section: React.SFC<Props> = ({
 
     {children}
 
-    {nextSectionLink && <NextSectionLink href={nextSectionLink} />}
-  </StyledSection>
+    {props.id && <SectionLink {...props} />}
+  </Section>
 );
 
-export default Section;
+export default _Section;
