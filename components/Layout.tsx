@@ -52,7 +52,7 @@ const Layout: React.SFC = ({ children }) => (
 
       <FontHeadLink />
 
-      <meta name="theme-color" content="white" />
+      <meta name="theme-color" content="black" />
       <link rel="apple-touch-icon" href={logo} />
       <link rel="icon" type="image/png" href={logo} />
 

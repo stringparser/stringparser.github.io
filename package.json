@@ -11,8 +11,8 @@
     "start": "next start",
     "clean": "rm -rf dist/**/* && touch dist/.nojekyll",
     "build": "yarn clean && next build",
-    "export": "yarn build && NODE_ENV=production next export -o dist",
-    "deploy": "yarn export && git add dist && git commit -m 'deploy next.js export' && git subtree push --prefix dist origin master"
+    "export": "yarn clean && NODE_ENV=production next export -o dist",
+    "deploy": "yarn export && git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
     "@stringparser/cv": "https://github.com/stringparser/cv.git",
