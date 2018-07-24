@@ -6,7 +6,7 @@ import { FontHeadLink, contentFont } from './Font';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { BACKEND_URL, META_KEYWORDS } from '../config/client.js';
+import { BACKEND_URL, META_KEYWORDS, TWITTER_URL } from '../config/client.js';
 
 injectGlobal`
   html {
@@ -43,19 +43,26 @@ const logo = `${BACKEND_URL}/static/img/logo.png`;
 const Layout: React.SFC = ({ children }) => (
   <main>
     <Head>
-      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-
       <meta charSet="utf-8" />
-      <meta name="theme-color" content="white" />
+      <title>Javier Carrillo Milla</title>
+      <meta name="keywords" content={META_KEYWORDS} />
+      <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="description" content="Freelance Software Engineer" />
       <meta name="viewport" content="width=device-width" user-scalable="no" />
 
       <FontHeadLink />
+
+      <meta name="theme-color" content="white" />
       <link rel="apple-touch-icon" href={logo} />
       <link rel="icon" type="image/png" href={logo} />
 
-      <title>Javier Carrillo Milla</title>
-      <meta name="keywords" content={META_KEYWORDS} />
-      <meta name="description" content="Freelance Software Engineer" />
+      <link rel="me" href={TWITTER_URL} />
+      <link rel="canonical" href={BACKEND_URL} />
+      <meta property="og:site_name" content="Javier Carrillo Milla" />
+      <meta property="og:url" content={BACKEND_URL} />
+      <meta property="og:type" content="website" />
+      <meta property="og:title" content="Javier Carrillo Milla" />
+      <meta property="og:description" content="Freelance Software Engineer" />
     </Head>
 
     <Navbar />
