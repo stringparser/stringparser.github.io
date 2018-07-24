@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "build": "rm -rf dist && touch dist/.nojekyll && next build",
-    "export": "yarn build && NODE_ENV=production next export dist",
+    "build": "rm -rf dist && mkdir dist && touch dist/.nojekyll && next build",
+    "export": "yarn build && NODE_ENV=production next export -o dist",
     "deploy": "yarn export && cd dist && git commit -m 'deploy' && git push origin master && cd .."
   },
   "devDependencies": {
