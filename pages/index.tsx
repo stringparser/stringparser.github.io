@@ -62,10 +62,8 @@ const IndexPage: React.SFC = () => (
           </H2>
           <Text>
           {`
-            Creating front-end applications for web, \
-            mobile or desktop is my main focus and I \
-            have experience coding back-end services and \
-            setting up infrastructure.
+            Creating front-end applications for web, mobile or desktop is my main focus. \
+            I also have experience coding back-end services and setting up infrastructure.
           `}
           </Text>
 

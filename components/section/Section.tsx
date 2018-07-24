@@ -1,7 +1,7 @@
 
 import styled from 'styled-components';
 
-import { colors, zIndex } from '../theme';
+import { colors, zIndex, breakpoints } from '../theme';
 import { forMedia, align, composeMixins, boxShadow } from '../mixins';
 
 import Background, { parseBackgroundAsString } from '../Background';
@@ -19,6 +19,7 @@ const sectionTypes = {
   primary: `
     color: white;
     text-align: center;
+    min-height: 300px;
     background-color: rgba(0,0,0,0.8);
   `,
   secondary: `
