@@ -9,10 +9,10 @@
   "scripts": {
     "dev": "next",
     "start": "next start",
-    "clean": "rm -rf dist && mkdir dist && touch dist/.nojekyll",
-    "build": "yarn clean && next build && NODE_ENV=production next export -o dist",
-    "export": "yarn build && cd dist && git commit -m 'deploy' || cd ..",
-    "deploy": "yarn export && cd dist && git push origin master && cd .."
+    "clean": "rm -rf dist/**/* && touch dist/.nojekyll",
+    "build": "yarn clean && next build",
+    "export": "yarn build && NODE_ENV=production next export -o dist",
+    "deploy": "yarn export && git add dist && git commit -m 'deploy next.js export' && git subtree push --prefix dist origin master"
   },
   "devDependencies": {
     "@stringparser/cv": "https://github.com/stringparser/cv.git",
