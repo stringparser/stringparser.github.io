@@ -10,6 +10,7 @@ Router.onRouteChangeComplete = (url: string) => {
   }
 
   if (window.analytics) {
+    window.analytics.reset();
     window.analytics.page();
   }
 };
