@@ -1,4 +1,4 @@
-import Layout from '../components/Layout';
+import Page from '../components/Page';
 import Section from '../components/section/Section';
 
 import { EMAIL, LINKEDIN_URL, TWITTER_URL, GITHUB_URL } from '../config/client';
@@ -16,7 +16,7 @@ import { twoColumnSectionStyles } from './index';
 import EmailMeLink from '../components/link/EmailMeLink';
 
 const ContactPage: React.SFC = () => (
-  <Layout>
+  <Page title="Let's team up">
     <Section
       variation="primary"
       background="/static/img/red-phone.jpg"
@@ -30,7 +30,7 @@ const ContactPage: React.SFC = () => (
           Contact
         </H1>
         <Text>
-          Let's team up and build together.
+          Let's team up.
         </Text>
       </Layer>
     </Section>
@@ -104,7 +104,7 @@ const ContactPage: React.SFC = () => (
         </Layer>
       </Layer>
     </Section>
-  </Layout>
+  </Page>
 );
 
 export default ContactPage;

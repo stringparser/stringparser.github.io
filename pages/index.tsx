@@ -1,7 +1,7 @@
+import Page from '../components/Page';
 import Text from '../components/Text';
 import Layer from '../components/Layer';
 import Image from '../components/layout/Image';
-import Layout from '../components/Layout';
 import Section from '../components/section/Section';
 import Highlight from '../components/text/Highlight';
 import { H1, H2 } from '../components/Heading';
@@ -41,7 +41,7 @@ export const twoColumnSectionStyles = [
 ];
 
 const IndexPage: React.SFC = () => (
-  <Layout>
+  <Page title="I'm Javier, freelance Software Engineer">
 
     <Section
       variation="primary"
@@ -103,7 +103,7 @@ const IndexPage: React.SFC = () => (
     </Section>
 
     <ContactSection id="contact" />
-  </Layout>
+  </Page>
 );
 
 export default IndexPage;

@@ -1,9 +1,9 @@
 import styled from 'styled-components';
 import * as cv from '@stringparser/cv';
 
+import Page from '../components/Page';
 import Text from '../components/Text';
 import Layer from '../components/Layer';
-import Layout from '../components/Layout';
 import { HR } from '../components/Spacing';
 import Section from '../components/section/Section';
 import Background from '../components/Background';
@@ -61,7 +61,7 @@ const UL = styled<{ isUnstyled?: boolean; }, 'ul'>('ul')`
 `;
 
 const ResumePage: React.SFC = () => (
-  <Layout>
+  <Page title="Fint out what I've been up to">
     <Section
       variation="primary"
       background="/static/img/laptop-pen-notebook.jpg"
@@ -71,7 +71,7 @@ const ResumePage: React.SFC = () => (
 
       <Layer mixins={[align('t-center')]}>
         <H1>
-          Resume
+          CV
         </H1>
         <Text>
           Find out what I've been up to.
@@ -194,7 +194,7 @@ const ResumePage: React.SFC = () => (
         </UL>
       </Layer>
     </Section>
-  </Layout>
+  </Page>
 );
 
 export default ResumePage;

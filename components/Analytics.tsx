@@ -15,8 +15,5 @@ Router.onRouteChangeComplete = (url: string) => {
 };
 
 export const AnalyticsHeadScript = () => (
-  <script
-    src={`${BACKEND_URL}/static/vendor/segment.js`}
-    defer={true}
-  />
+  <script src={`${BACKEND_URL}/static/vendor/segment.js`} />
 );

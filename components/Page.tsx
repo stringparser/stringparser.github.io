@@ -41,19 +41,23 @@ injectGlobal`
 
 const logo = `${BACKEND_URL}/static/img/logo.png`;
 
-const Layout: React.SFC = ({ children }) => (
+type PageProps = {
+  title: string;
+};
+
+const Page: React.SFC<PageProps> = ({ title, children }) => (
   <main>
     <Head>
       <meta charSet="utf-8" />
-      <title>Javier Carrillo Milla</title>
-      <meta name="keywords" content={META_KEYWORDS} />
       <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
-      <meta name="description" content="Freelance Software Engineer" />
       <meta name="viewport" content="width=device-width" user-scalable="no" />
 
+      <title>{title}</title>
+      <meta name="keywords" content={META_KEYWORDS} />
+      <meta name="description" content="Javier Carrillo Milla. Freelance Software Engineer" />
       <FontHeadLink />
 
-      <meta name="theme-color" content="black" />
+      <meta name="theme-color" content="#000" />
       <link rel="apple-touch-icon" href={logo} />
       <link rel="icon" type="image/png" href={logo} />
 
@@ -76,4 +80,4 @@ const Layout: React.SFC = ({ children }) => (
   </main>
 );
 
-export default Layout;
+export default Page;

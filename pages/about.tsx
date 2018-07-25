@@ -1,6 +1,6 @@
+import Page from '../components/Page';
 import Text from '../components/Text';
 import Layer from '../components/Layer';
-import Layout from '../components/Layout';
 import { H1 } from '../components/Heading';
 import Section from '../components/section/Section';
 import Background from '../components/Background';
@@ -40,7 +40,7 @@ const sectionStyles = [
 ];
 
 const AboutPage: React.SFC = () => (
-  <Layout>
+  <Page title="Hey, hi there! Come in">
     <Section
       variation="primary"
       background="/static/img/rotating-sky.jpg"
@@ -63,7 +63,7 @@ const AboutPage: React.SFC = () => (
         <AboutContent />
       </Layer>
     </Section>
-  </Layout>
+  </Page>
 );
 
 export default AboutPage;
