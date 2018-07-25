@@ -10,8 +10,12 @@ Router.onRouteChangeComplete = (url: string) => {
   }
 
   if (window.analytics) {
-    window.analytics.reset();
-    window.analytics.page();
+    window.analytics.page(document.title, {
+      url: window.location.href,
+      path: Router.pathname,
+      title: document.title,
+      referrer: document.referrer,
+    });
   }
 };
 
