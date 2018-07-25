@@ -16,6 +16,12 @@ const sharedStyles = `
   right: 0;
   bottom: 0;
   position: absolute;
+
+  width: auto;
+  height: auto;
+  overflow: hidden;
+  min-width: 100%;
+  min-height: 100%;
 `;
 
 const BackgroundVideo: React.SFC<BackgroundProps> = ({ video, image }) => (
@@ -26,7 +32,7 @@ const BackgroundVideo: React.SFC<BackgroundProps> = ({ video, image }) => (
       muted={true}
       autoPlay={true}
     />
-    <style jsx={true}>
+    <style jsx>
       {`
         video {
           ${sharedStyles}
@@ -39,7 +45,7 @@ const BackgroundVideo: React.SFC<BackgroundProps> = ({ video, image }) => (
 
 const BackgroundImage: React.SFC<BackgroundProps> = ({ image, position }) => (
   <div>
-    <style jsx={true}>
+    <style jsx>
       {`
         ${sharedStyles}
         z-index: ${zIndex.background};
