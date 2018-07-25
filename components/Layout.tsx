@@ -7,6 +7,7 @@ import { FontHeadLink, contentFont } from './Font';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { BACKEND_URL, META_KEYWORDS, TWITTER_URL } from '../config/client.js';
+import { AnalyticsHeadScript } from './Analytics';
 
 injectGlobal`
   html {
@@ -63,6 +64,8 @@ const Layout: React.SFC = ({ children }) => (
       <meta property="og:type" content="website" />
       <meta property="og:title" content="Javier Carrillo Milla" />
       <meta property="og:description" content="Freelance Software Engineer" />
+
+      <AnalyticsHeadScript />
     </Head>
 
     <Navbar />

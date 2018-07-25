@@ -670,6 +670,10 @@
   dependencies:
     csstype "^2.2.0"
 
+"@types/segment-analytics@^0.0.28":
+  version "0.0.28"
+  resolved "https://registry.yarnpkg.com/@types/segment-analytics/-/segment-analytics-0.0.28.tgz#a23e26d3171cf6a735ae2ae12974b5f6a707c414"
+
 "@zeit/next-typescript@^1.1.0":
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/@zeit/next-typescript/-/next-typescript-1.1.0.tgz#57a45c85c336fee8d71c1bd966195565016932b2"
