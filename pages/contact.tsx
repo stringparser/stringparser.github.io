@@ -73,7 +73,7 @@ const ContactPage: React.SFC = () => (
 
           <Text>
             You found some performance issues, an application area{' '}
-            or a topic you want to investigate.
+            or a topic you want to investigate?
           </Text>
 
           <BR height={1} />

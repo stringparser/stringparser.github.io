@@ -12,10 +12,12 @@ const AboutContent = () => (
     <Text>
       My background is in Physics, I've studied it in <a href="//www.ugr.es">Granada</a> (Spain){' '}
       and in <a href="//www.lmu.de">Munich</a> (Germany). I like to solve problems, the simpler{' '}
-      the better. I'm from a <a href="//goo.gl/maps/pNam2Bxtsyw">tiny town in Jaén</a> (Spain).{' '}
-      I like talking with people. I've had 3 bands in Granada for which I made some songs and sing.
+      the solution the better. I'm from a{' '}
+      <a href="//goo.gl/maps/pNam2Bxtsyw">tiny town in Jaén</a>{' '}
+      (Spain). I like talking with people.{' '}
+      I've had 3 bands in Granada for which I made some songs and sing.{' '}
       The first contact I had with web development was in winter 2012. Started with{' '}
-      <a href="//nodejs.org">node</a> which led to{' '}
+      <a href="//nodejs.org">nodejs</a> which led to{' '}
       <a href="//github.com/strongloop/express">express</a>,{' '}
       <a href="//github.com/jadejs/jade">jade</a> and{' '}
       <a href="//mongodb.org/">mongodb</a>, moved to{' '}
