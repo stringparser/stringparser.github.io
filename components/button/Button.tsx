@@ -13,9 +13,7 @@ const styles = {
     padding: 1rem;
     font-size: 0.85rem;
 
-    ${forMedia('tablet', `
-      max-width: 320px;
-    `)}
+    ${forMedia('tablet', `max-width: 320px;`)}
   `,
 };
 

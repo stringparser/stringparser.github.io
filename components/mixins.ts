@@ -60,9 +60,9 @@ export const gutter = (n: number = 1) => `
 `;
 
 const mqForMedia = (media: Media) => (
-  media === 'phone'
-    ? `(max-width: ${breakpoints[media]})`
-    : `(min-width: ${breakpoints[media]})`
+  media === 'phone' && `(max-width: ${breakpoints.phone})` ||
+  media === 'tablet' && `(min-width: ${breakpoints.phone})` ||
+  `(min-width: ${breakpoints[media]})`
 );
 
 export const forMedia = (media: Media, css: string) => `

@@ -28,6 +28,9 @@ export const twoColumnSectionStyles = [
       flex: 1;
     }
 
+    margin: 0 auto;
+    max-width: ${breakpoints.phone};
+
   `,
   forMedia('tablet', `
     display: flex;
@@ -35,7 +38,6 @@ export const twoColumnSectionStyles = [
     flex-direction: row;
     justify-content: center;
 
-    margin: 0 auto;
     max-width: ${breakpoints.tablet};
   `),
 ];
