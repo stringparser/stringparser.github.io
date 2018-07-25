@@ -11,7 +11,7 @@ import { AnalyticsHeadScript } from './Analytics';
 
 injectGlobal`
   html {
-    font-size: 12px;
+    font-size: 15px;
   }
   ${forMedia('tablet', `
     html {
