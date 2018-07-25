@@ -1,3 +1,5 @@
 interface Window {
-  analytics: SegmentAnalytics.AnalyticsJS;
+  analytics: SegmentAnalytics.AnalyticsJS & {
+   initialize(): void;
+  };
 }

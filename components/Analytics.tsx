@@ -2,6 +2,7 @@
 import Router from 'next/router';
 import { BACKEND_URL } from '../config/client';
 
+let isFirstCall = false;
 const oldOnRouteChange = Router.onRouteChangeComplete;
 
 Router.onRouteChangeComplete = (url: string) => {
@@ -9,14 +10,16 @@ Router.onRouteChangeComplete = (url: string) => {
     oldOnRouteChange(url);
   }
 
-  if (window.analytics) {
-    window.analytics.page(document.title, {
-      url: window.location.href,
-      path: Router.pathname,
-      title: document.title,
-      referrer: document.referrer,
-    });
+  if (!window.analytics) {
+    return;
   }
+
+  if (!isFirstCall && window.analytics.initialize) {
+    isFirstCall = true;
+    window.analytics.initialize();
+  }
+
+  window.analytics.page();
 };
 
 export const AnalyticsHeadScript = () => (
