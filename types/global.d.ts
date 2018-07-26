@@ -1,5 +1,7 @@
+import 'segment-analytics';
+
 interface Window {
-  analytics: SegmentAnalytics.AnalyticsJS & {
+  analytics: AnalyticsJS & {
    initialize(): void;
   };
 }
