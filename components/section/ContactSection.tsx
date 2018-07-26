@@ -22,10 +22,12 @@ const ContactSection: React.SFC<Props> = (props) => (
         </H2>
 
         <Text>
-          You can always send me an <EmailMeLink /> or message me via{' '}
-          <a href={LINKEDIN_URL}>linkedin</a>,{' '}
-          <a href={TWITTER_URL}>twitter</a> or{' '}
-          <a href={GITHUB_URL}>github</a>.
+          You can always send me an <EmailMeLink />{' '}
+          or find me as @stringparser elsewhere like
+            <a href={GITHUB_URL}>github</a>,{' '}
+            <a href={TWITTER_URL}>twitter</a> or{' '}
+            <a href={LINKEDIN_URL}>linkedin</a>
+          .
         </Text>
       </Layer>
       <Layer mixins={[align('center'), gutter()]}>
