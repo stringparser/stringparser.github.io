@@ -1,7 +1,7 @@
 import Link from 'next/link';
 
 import Button from './Button';
-import { EMAIL, BACKEND_URL } from '../../config/client.js';
+import { EMAIL, BACKEND_URL } from '../../config/client';
 
 const onMailto = (href: string) => () => window.location.assign(href);
 

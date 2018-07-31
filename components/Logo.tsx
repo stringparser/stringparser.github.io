@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 import Image from './layout/Image';
 import { iconSize } from './theme';
-import { BACKEND_URL } from '../config/client.js';
 
 type LogoProps = {
   dim?: number;

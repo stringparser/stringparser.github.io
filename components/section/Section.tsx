@@ -24,7 +24,7 @@ const sectionTypes = {
   `,
   secondary: `
     color: black;
-    background-color: rgba(0,0,0,0.05);
+    background-color: white;
   `,
 };
 
@@ -39,7 +39,7 @@ export type SectionProps = {
   backgroundPosition?: React.CSSProperties['backgroundPosition'];
 };
 
-const Section = styled<SectionProps, 'section'>('section')`
+const _Section = styled<SectionProps, 'section'>('section')`
   ${boxShadow()}
   ${align('v-center')}
   ${forMedia('phone', 'padding: 2rem;')}
@@ -52,14 +52,14 @@ const Section = styled<SectionProps, 'section'>('section')`
   position: relative;
 `;
 
-const _Section: React.SFC<SectionProps> = ({
+const Section: React.SFC<SectionProps> = ({
   background,
   nextSectionLink,
   backgroundPosition,
   children,
   ...props
 }) => (
-  <Section {...props}>
+  <_Section {...props}>
     <Background
       position={backgroundPosition}
       {...parseBackgroundAsString(background)}
@@ -68,7 +68,7 @@ const _Section: React.SFC<SectionProps> = ({
     {children}
 
     {props.id && <SectionLink {...props} />}
-  </Section>
+  </_Section>
 );
 
-export default _Section;
+export default Section;

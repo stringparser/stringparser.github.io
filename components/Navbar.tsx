@@ -5,7 +5,7 @@ import { createRef, Component, RefObject } from 'react';
 import Logo from './Logo';
 import { zIndex } from './theme';
 import { linkHighlight } from './mixins';
-import { BACKEND_URL } from '../config/client.js';
+import { BACKEND_URL } from '../config/client';
 
 export const navbarHeight = 4;
 
