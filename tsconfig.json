@@ -3,21 +3,16 @@
   "compilerOptions": {
     "lib": [
       "dom",
-      "es2015",
-      "es2016",
-      "es2017",
-      "es2017.object"
+      "es7"
     ],
     "jsx": "preserve",
-    "paths": {
-      "@components/*": [ "components/*" ]
-    },
     "module": "esnext",
     "target": "esnext",
     "baseUrl": "src",
     "allowJs": true,
     "sourceMap": true,
     "skipLibCheck": true,
+    "importHelpers": true,
     "noUnusedLocals": true,
     "removeComments": false,
     "moduleResolution": "node",

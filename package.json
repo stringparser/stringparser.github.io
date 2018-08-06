@@ -31,6 +31,8 @@
     "typescript": "^2.9.2"
   },
   "dependencies": {
-    "@types/segment-analytics": "^0.0.28"
+    "@types/segment-analytics": "^0.0.28",
+    "@types/webmidi": "^2.0.2",
+    "tone": "^0.12.80"
   }
 }
