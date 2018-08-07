@@ -7,7 +7,7 @@ exports = module.exports = {
   GITHUB_URL: 'https://github.com/stringparser',
   TWITTER_URL: 'https://twitter.com/stringparser',
   BACKEND_URL: process.env.NODE_ENV === 'production'
-    ? 'http://www.jacami.co'
+    ? 'https://stringparser.github.io'
     : '',
   LINKEDIN_URL: 'https://www.linkedin.com/in/stringparser',
   META_KEYWORDS: ['software', 'engineer'].concat(...technologies).join(', ').toLowerCase(),
