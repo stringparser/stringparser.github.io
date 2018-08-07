@@ -15,7 +15,7 @@ class AudioPage extends Component<{}, State> {
   componentDidMount() {
     navigator.requestMIDIAccess().then(async ({ inputs }) => {
       const Tone = await import('tone');
-      const synth = new Tone.PolySynth(10);
+      const synth = new Tone.PolySynth(100);
 
       synth.toMaster();
 
