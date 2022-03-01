@@ -83,6 +83,10 @@ const ResumePage: React.FC = () => (
       id="cv"
       mixins={resumeSectionStyles}
     >
+
+      <br />
+      <br />
+
       <H3>
         Languages
       </H3>
