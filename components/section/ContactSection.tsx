@@ -13,7 +13,7 @@ import EmailMeLink from '../link/EmailMeLink';
 
 type Props = React.HtmlHTMLAttributes<HTMLElement>;
 
-const ContactSection: React.SFC<Props> = (props) => (
+const ContactSection: React.FC<Props> = (props) => (
   <Section variation="light" {...props}>
     <Layer mixins={twoColumnSectionStyles}>
       <Layer mixins={[align('v-center'), gutter()]}>

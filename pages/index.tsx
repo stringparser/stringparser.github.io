@@ -42,7 +42,7 @@ export const twoColumnSectionStyles = [
   `),
 ];
 
-const IndexPage: React.SFC = () => (
+const IndexPage: React.FC = () => (
   <Page title="I'm Javier, freelance Software Engineer">
 
     <Section

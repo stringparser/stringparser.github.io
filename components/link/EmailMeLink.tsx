@@ -4,7 +4,7 @@ const onMailto = (href: string) => () => (
   window.location.assign(`mailto:${href}`)
 );
 
-const EmailMeLink: React.SFC = () => (
+const EmailMeLink: React.FC = () => (
   <a href="#" onClick={onMailto(EMAIL)}>
     email
   </a>

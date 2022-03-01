@@ -1,5 +1,5 @@
 import { keyframes } from 'styled-components';
-import { colors, Media, breakpoints } from './theme';
+import { Media, breakpoints } from './theme';
 
 export const composeMixins = (mixins?: string[]) => (
   mixins && mixins.join('\n')

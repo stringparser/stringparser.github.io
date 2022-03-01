@@ -66,7 +66,7 @@ const Rect = styled.rect`
   }
 `;
 
-const Piano: React.SFC<PianoProps> = (props) => (
+const Piano: React.FC<PianoProps> = (props) => (
   <svg
     strokeWidth="1"
     viewBox={`0 0 ${props.numberOfOctaves * getFullOctaveWith(props)} 80`}

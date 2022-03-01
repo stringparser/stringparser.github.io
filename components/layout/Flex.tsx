@@ -7,7 +7,7 @@ type FlexProps = {
   justifyContent?: React.CSSProperties['justifyContent'];
 };
 
-const Flex = styled<FlexProps, 'div'>('div')`
+const Flex = styled('div')<FlexProps>`
   display: flex;
   flex-direction: ${({ flexDirection }) => flexDirection || 'row'};
 

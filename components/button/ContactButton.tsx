@@ -3,7 +3,7 @@ import Link from 'next/link';
 import Button from './Button';
 import { BACKEND_URL } from '../../config/client';
 
-const ContactButton: React.SFC = ({ children }) => (
+const ContactButton: React.FC = ({ children }) => (
   <Link href={`${BACKEND_URL}/contact`}>
     <Button>
       <b>

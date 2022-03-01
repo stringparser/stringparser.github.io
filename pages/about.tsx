@@ -41,7 +41,7 @@ const sectionStyles = [
   `,
 ];
 
-const AboutPage: React.SFC = () => (
+const AboutPage: React.FC = () => (
   <Page title="Hey, hi there! Come in">
     <Section
       variation="primary"

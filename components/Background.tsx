@@ -24,53 +24,39 @@ const sharedStyles = `
   min-height: 100%;
 `;
 
-const BackgroundVideo: React.SFC<BackgroundProps> = ({ video, image }) => (
-  <div>
-    <video
-      src={video}
-      loop={true}
-      muted={true}
-      autoPlay={true}
-    />
-    <style jsx>
-      {`
-        video {
-          ${sharedStyles}
-          z-index: ${zIndex.background};
-        }
-      `}
-    </style>
-  </div>
+const StyledVideo = styled('video')`
+  ${sharedStyles}
+  z-index: ${zIndex.background};
+`
+
+const BackgroundVideo: React.FC<BackgroundProps> = ({ video }) => (
+  <StyledVideo
+    src={video}
+    loop={true}
+    muted={true}
+    autoPlay={true}
+  />
 );
 
-const BackgroundImage: React.SFC<BackgroundProps> = ({ image, position }) => (
-  <div>
-    <style jsx>
-      {`
-        ${sharedStyles}
-        z-index: ${zIndex.background};
-        background: url('${image}') center center no-repeat;
-        background-size: cover;
-        ${position
-          ? `background-position: ${position};`
-          : ''
-        }
-      `}
-    </style>
-  </div>
-);
+const BackgroundImage =  styled('div')<BackgroundProps>
+`
+  ${sharedStyles}
+  z-index: ${zIndex.background};
+  background: url('${({image}) => image}') center center no-repeat;
+  background-size: cover;
+  ${({position}) => position
+    ? `background-position: ${position};`
+    : ''
+  }
+`;
 
-const BackgroundColor: React.SFC<BackgroundProps> = ({ color }) => (
-  <div>
-    <style jsx={true}>
-      {`
-        ${sharedStyles}
-        z-index: ${zIndex.background + 1};
-        background-color: ${color};
-      `}
-    </style>
-  </div>
-);
+const BackgroundColor = styled('div')<BackgroundProps>
+  `
+    ${sharedStyles}
+    z-index: ${zIndex.background + 1};
+    background-color: ${props => props.color};
+  `
+;
 
 export const parseBackgroundAsString = (input: string) => ({
   color: /mp\d$/.test(input) ? colors.dim : undefined,
@@ -88,7 +74,7 @@ const BackgroundContainer = styled.div`
   overflow: hidden;
 `;
 
-const Background: React.SFC<BackgroundProps> = ({
+const Background: React.FC<BackgroundProps> = ({
   color,
   video,
   image,

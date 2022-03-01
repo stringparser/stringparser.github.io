@@ -7,11 +7,14 @@ import { contentFont } from './Font';
 import Navbar from './Navbar';
 import Footer from './Footer';
 import { BACKEND_URL, META_KEYWORDS, TWITTER_URL } from '../config/client';
-import { AnalyticsHeadScript } from './Analytics';
 
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 15px;
+    font-feature-settings: "rlig" 1,"calt" 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   ${forMedia('tablet', `
     html {
@@ -49,7 +52,7 @@ type PageProps = {
   title: string;
 };
 
-const Page: React.SFC<PageProps> = ({ title, children }) => (
+const Page: React.FC<PageProps> = ({ title, children }) => (
   <main>
     <Head>
       <meta charSet="utf-8" />
@@ -72,7 +75,6 @@ const Page: React.SFC<PageProps> = ({ title, children }) => (
       <meta property="og:title" content="Javier Carrillo Milla" />
       <meta property="og:description" content="Freelance Software Engineer" />
 
-      <AnalyticsHeadScript />
     </Head>
 
     <GlobalStyle />

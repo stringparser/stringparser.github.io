@@ -25,7 +25,7 @@ const RoundIconContainer = styled.div`
   }
 `;
 
-const SectionLink: React.SFC<SectionProps> = ({ id }) => (
+const SectionLink: React.FC<SectionProps> = ({ id }) => (
   <RoundIconContainer>
     <a href={`#${id}`}>
       <ChevronDown />

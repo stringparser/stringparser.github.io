@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
-import { boxShadow, gutter, forMedia, linkHighlight } from './mixins';
+import { boxShadow, gutter, linkHighlight } from './mixins';
 
-const StyledCard = styled<CardProps, 'div'>('div')`
+const StyledCard = styled('div')<CardProps>`
   ${gutter(1.5)}
 
   cursor: pointer;
@@ -47,7 +47,7 @@ type CardProps = {
   href?: string;
 };
 
-const Card: React.SFC<CardProps> = ({ href, children }) => (
+const Card: React.FC<CardProps> = ({ href, children }) => (
   <StyledCard onClick={onClick(href)}>
     {children}
   </StyledCard>

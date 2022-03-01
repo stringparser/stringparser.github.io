@@ -17,9 +17,11 @@
   "devDependencies": {
     "@babel/core": "^7.17.5",
     "@stringparser/cv": "https://github.com/stringparser/cv.git",
+    "@types/babel__core": "^7.1.18",
     "@types/next": "^6.0.3",
     "@types/react": "^16.4.4",
     "@types/react-dom": "^16.0.6",
+    "@types/styled-components": "^5.1.23",
     "babel-plugin-styled-components": "^1.5.1",
     "next": "^12.1.0",
     "react": "^17.0.2",
@@ -33,6 +35,7 @@
   "dependencies": {
     "@types/segment-analytics": "^0.0.28",
     "@types/webmidi": "^2.0.2",
+    "styled-jsx": "^5.0.0",
     "tone": "^0.12.80"
   }
 }

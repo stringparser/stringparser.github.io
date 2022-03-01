@@ -52,14 +52,14 @@ const resumeSectionStyles = [
   `,
 ];
 
-const UL = styled<{ isUnstyled?: boolean; }, 'ul'>('ul')`
-  ${({ isUnstyled }) => isUnstyled && `
+const UL = styled('ul')`
+  ${({ isUnstyled }: { isUnstyled?: boolean; }) => isUnstyled && `
     padding: unset;
     list-style-type: none;
   `}
 `;
 
-const ResumePage: React.SFC = () => (
+const ResumePage: React.FC = () => (
   <Page title="Fint out what I've been up to">
     <Section
       variation="primary"
@@ -83,21 +83,19 @@ const ResumePage: React.SFC = () => (
       id="cv"
       mixins={resumeSectionStyles}
     >
-      <Layer>
-        <H3>
-          Languages
-        </H3>
+      <H3>
+        Languages
+      </H3>
 
-        <br />
+      <br />
 
-        <UL>
-          {cv.languages
-            .map((el, index) =>
-              <li key={index}>{el.name}: {el.level}</li>
-            )
-          }
-        </UL>
-      </Layer>
+      <UL>
+        {cv.languages
+          .map((el, index) =>
+            <li key={index}>{el.name}: {el.level}</li>
+          )
+        }
+      </UL>
     </Section>
 
     <Section mixins={resumeSectionStyles}>

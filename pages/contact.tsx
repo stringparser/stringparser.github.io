@@ -15,7 +15,7 @@ import { align, list, columns, gutter } from '../components/mixins';
 import { twoColumnSectionStyles } from './index';
 import EmailMeLink from '../components/link/EmailMeLink';
 
-const ContactPage: React.SFC = () => (
+const ContactPage: React.FC = () => (
   <Page title="Let's team up">
     <Section
       variation="primary"

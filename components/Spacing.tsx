@@ -4,8 +4,8 @@ type BRProps = {
   height?: number;
 };
 
-export const BR = styled<BRProps, 'br'>('br')`
-  height: ${({ height }) => `${height || 0.25}rem`};
+export const BR = styled('br')`
+  height: ${({ height }: BRProps) => `${height || 0.25}rem`};
   content: '';
   display: block;
 `;

@@ -14,14 +14,14 @@ type NavProps = {
   position?: 'static' | 'fixed';
 };
 
-const Nav = styled<NavProps, 'nav'>('nav')`
-  top: ${({ topPos }) => topPos || 0}%;
+const Nav = styled('nav')`
+  top: ${({ topPos }: NavProps) => topPos || 0}%;
   left: 0;
   right: 0;
   height: ${navbarHeight}rem;
   padding: 1rem 2rem;
   z-index: ${zIndex.navbar};
-  position: ${({ position }) => position || 'static' };
+  position: ${({ position }: NavProps) => position || 'static' };
   transition: top 500ms ease-in-out;
 
   display: flex;
@@ -39,7 +39,7 @@ type NavItemProps = {
   highlightLinks?: boolean;
 };
 
-const NavItem = styled<NavItemProps, 'div'>('div')`
+const NavItem = styled('div')`
   &:first-of-type {
     text-align: left;
   }
@@ -53,7 +53,7 @@ const NavItem = styled<NavItemProps, 'div'>('div')`
     text-decoration: none;
   }
 
-  ${({ highlightLinks }) => highlightLinks && linkHighlight()}
+  ${({ highlightLinks }: NavItemProps) => highlightLinks && linkHighlight()}
 
   a:hover {
     text-decoration: underline;
@@ -114,9 +114,9 @@ class Navbar extends Component {
     return (
       <>
         <Nav
+          ref={this.navRef}
           topPos={topPos}
           position={position}
-          innerRef={this.navRef}
         >
           <NavItem>
             <Link prefetch href="/">

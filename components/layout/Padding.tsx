@@ -11,8 +11,8 @@ type PaddingProps = {
   size?: keyof (typeof padding)
 };
 
-const Padding = styled<PaddingProps, 'div'>('div')`
-  padding: ${(props) => padding[props.size || 'medium']}
+const Padding = styled('div')`
+  padding: ${(props: PaddingProps) => padding[props.size || 'medium']}
 `;
 
 export default Padding;

@@ -1,8 +1,8 @@
 
 import styled from 'styled-components';
 
-import { colors, zIndex, breakpoints } from '../theme';
-import { forMedia, align, composeMixins, boxShadow } from '../mixins';
+import { colors, zIndex } from '../theme';
+import { forMedia, align, composeMixins } from '../mixins';
 
 import Background, { parseBackgroundAsString } from '../Background';
 import SectionLink from './SectionLink';
@@ -39,11 +39,11 @@ export type SectionProps = {
   backgroundPosition?: React.CSSProperties['backgroundPosition'];
 };
 
-const Section = styled<SectionProps, 'section'>('section')`
+const Section = styled('section')`
   ${align('v-center')}
   ${forMedia('phone', 'padding: 2rem;')}
   ${forMedia('tablet', 'padding: 2rem;')}
-  ${({ variation }) => sectionTypes[variation || 'secondary']}
+  ${({ variation }: SectionProps) => sectionTypes[variation || 'secondary']}
 
   ${({ mixins }) => composeMixins(mixins)}
 
@@ -51,7 +51,7 @@ const Section = styled<SectionProps, 'section'>('section')`
   position: relative;
 `;
 
-const _Section: React.SFC<SectionProps> = ({
+const _Section: React.FC<SectionProps> = ({
   background,
   nextSectionLink,
   backgroundPosition,

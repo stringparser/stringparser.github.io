@@ -21,14 +21,14 @@ type ButtonProps = {
   variation?: keyof (typeof styles);
 };
 
-const Button = styled<ButtonProps, 'button'>('button')`
+const Button = styled('button')`
   cursor: pointer;
   apperance: none;
   text-align: center;
 
-  ${({ variation = 'fullWidth' }) => styles[variation]}
+  ${({ variation = 'fullWidth' }: ButtonProps) => styles[variation]}
 
-  border: 1px solid currentColor;
+  border: 2px solid currentColor;
   border-radius: 4px;
 
   color: currentColor;

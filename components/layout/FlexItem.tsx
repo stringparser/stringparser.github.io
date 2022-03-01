@@ -4,7 +4,7 @@ type FlexItemProps = {
   flex?: React.CSSProperties['flex'];
 };
 
-const FlexItem = styled<FlexItemProps, 'div'>('div')`
+const FlexItem = styled('div')`
   display: inline-block;
   position: relative;
 
@@ -13,7 +13,7 @@ const FlexItem = styled<FlexItemProps, 'div'>('div')`
     max-height: 100%;
   }
 
-  ${props => `
+  ${(props: FlexItemProps) => `
     flex: ${props.flex || 1};
   `}
 `;

@@ -5,9 +5,9 @@ type Props = {
   mixins?: string[];
 };
 
-const Layer = styled<Props, 'div'>('div')`
+const Layer = styled('div')`
   position: relative;
-  ${({ mixins }) => composeMixins(mixins)}
+  ${({ mixins }: Props) => composeMixins(mixins)}
 `;
 
 export default Layer;
