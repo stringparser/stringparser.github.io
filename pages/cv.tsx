@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as cv from '@stringparser/cv';
+import * as cv from '@stringparser/cv/src/config';
 
 import Page from '../components/Page';
 import Text from '../components/Text';
@@ -22,8 +22,6 @@ const resumeSectionStyles = [
     background-color: snow;
 
     ${forMedia('tablet', `
-      flex-direction: row;
-      justify-content: space-between;
 
       & > *:first-child {
         flex: 1;
@@ -36,6 +34,7 @@ const resumeSectionStyles = [
       ul {
         margin: 0;
         padding: 0;
+        margin-left: 1.5rem;
       }
     `)}
 
@@ -88,8 +87,9 @@ const ResumePage: React.SFC = () => (
         <H3>
           Languages
         </H3>
-      </Layer>
-      <Layer>
+
+        <br />
+
         <UL>
           {cv.languages
             .map((el, index) =>
@@ -101,98 +101,98 @@ const ResumePage: React.SFC = () => (
     </Section>
 
     <Section mixins={resumeSectionStyles}>
-      <Layer>
-        <H3>
-          Technologies
-        </H3>
-      </Layer>
-      <Layer>
-        <UL>
-          {cv.technologies
-            .map((el, index) => <li key={index}>{el}</li>)
-          }
-        </UL>
-      </Layer>
+      <H3>
+        Technologies
+      </H3>
+
+      <br />
+
+      <UL>
+        {cv.technologies
+          .map((el, index) => <li key={index}>{el}</li>)
+        }
+      </UL>
     </Section>
 
     <Section mixins={resumeSectionStyles}>
-      <Layer>
-        <H3>
-          Experience
-        </H3>
-      </Layer>
-      <Layer>
-        <UL isUnstyled={true}>
-        {cv.experience.map((el, index) => {
+      <H3>
+        Experience
+      </H3>
+
+      <br />
+
+      <UL isUnstyled={true}>
+      {cv.experience.map((el, index) => {
+        return (
+          <li key={index}>
+            <Text>
+              {el.duration} ({el.location})
+            </Text>
+            <H4>
+              {el.title}
+            </H4>
+
+            {el.company && el.companyLink && (
+              <Text>
+                {el.appName && 'On '}
+                {el.appName && el.appLink && (
+                  <a href={el.appLink}>{el.appName}</a>
+                )}
+                {el.appLink ? ' for ' : 'For '}
+                {el.companyLink && <a href={el.companyLink}>{el.company}</a>}
+              </Text>
+            )}
+
+            {(el.description || '')
+              .trim()
+              .split('\n')
+              .map((line, jndex) => <Text key={jndex}>{line}</Text>)
+            }
+            <br />
+          </li>
+        );
+      })}
+      </UL>
+    </Section>
+
+    <Section mixins={resumeSectionStyles}>
+      <H3>
+        Education
+      </H3>
+
+      <UL isUnstyled={true}>
+        {cv.education.map((el, index) => {
           return (
             <li key={index}>
               <Text>
-                {el.duration} ({el.location})
+                {el.duration} at {el.location}
               </Text>
               <H4>
                 {el.title}
               </H4>
-              {el.link && (
-                <Text>
-                  {el.link && 'For '}
-                  {el.link && <a href={el.link}>{el.company}</a>}
-                </Text>
-              )}
-
+              <br />
               {(el.description || '')
                 .trim()
                 .split('\n')
-                .map((line, jndex) => <Text key={jndex}>{line}</Text>)
+                .map((line, jndex) =>
+                  <Text key={jndex}>
+                    {line}
+                  </Text>
+                )
               }
               <br />
             </li>
           );
         })}
-        </UL>
-      </Layer>
-    </Section>
-
-    <Section mixins={resumeSectionStyles}>
-      <Layer>
-        <H3>
-          Education
-        </H3>
-      </Layer>
-      <Layer>
-        <UL isUnstyled={true}>
-          {cv.education.map((el, index) => {
-            return (
-              <li key={index}>
-                <Text>
-                  {el.duration} at {el.location}
-                </Text>
-                <H4>
-                  {el.title}
-                </H4>
-                <br />
-                {(el.description || '')
-                  .trim()
-                  .split('\n')
-                  .map((line, jndex) =>
-                    <Text key={jndex}>
-                      {line}
-                    </Text>
-                  )
-                }
-                <br />
-              </li>
-            );
-          })}
-          <li>
-            <HR />
-            <Text>
-              UGR: University of Granada <br />
-              LMU: Ludwig-Maximilians-Universität <br />
-              CPM: Conservatorio Profesional de Música
-            </Text>
-          </li>
-        </UL>
-      </Layer>
+        <li>
+          <HR />
+          <Text>
+            UGR: University of Granada <br />
+            LMU: Ludwig-Maximilians-Universität <br />
+            CPM: Conservatorio Profesional de Música
+          </Text>
+        </li>
+      </UL>
     </Section>
   </Page>
 );

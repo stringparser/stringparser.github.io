@@ -1,8 +1,5 @@
-const path = require('path');
-const withTypescript = require('@zeit/next-typescript');
-
-const { BACKEND_URL } = require('./config/client');
-
-exports = module.exports = withTypescript({
-  assetPrefix: BACKEND_URL
-});
+exports = module.exports = {
+  assetPrefix: process.env.NODE_ENV === 'production'
+  ? 'https://stringparser.github.io'
+  : ''
+};

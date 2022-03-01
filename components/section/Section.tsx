@@ -40,10 +40,9 @@ export type SectionProps = {
 };
 
 const Section = styled<SectionProps, 'section'>('section')`
-  ${boxShadow()}
   ${align('v-center')}
   ${forMedia('phone', 'padding: 2rem;')}
-  ${forMedia('tablet', 'padding: 3rem;')}
+  ${forMedia('tablet', 'padding: 2rem;')}
   ${({ variation }) => sectionTypes[variation || 'secondary']}
 
   ${({ mixins }) => composeMixins(mixins)}

@@ -28,7 +28,8 @@ const Button = styled<ButtonProps, 'button'>('button')`
 
   ${({ variation = 'fullWidth' }) => styles[variation]}
 
-  border: 2px solid currentColor;
+  border: 1px solid currentColor;
+  border-radius: 4px;
 
   color: currentColor;
   background-color: transparent;

@@ -2,8 +2,8 @@ import styled from 'styled-components';
 import { headerFont } from './Font';
 
 const shared = `
-  margin: 0;
-  ${headerFont}
+  margin: 0.5rem 0;
+  font-family: ${headerFont};
 `;
 
 export const H1 = styled.h1`${shared}

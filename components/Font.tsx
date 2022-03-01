@@ -1,15 +1,8 @@
 
-export const headerFont = `
-  font-family: 'Merriweather Sans', sans-serif;
-`;
+export const fontFamily =
+"'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif";
 
-export const contentFont = `
-  font-family: 'Lato', sans-serif;
-`;
+export const headerFont = fontFamily;
 
-export const FontHeadLink = () => (
-  <link
-    rel="stylesheet"
-    href="https://fonts.googleapis.com/css?family=Lato:100,400,700|Merriweather:400,700"
-  />
-);
+export const contentFont = fontFamily;
+

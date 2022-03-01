@@ -1,5 +1,5 @@
 import Button from './Button';
-import resume from '@stringparser/cv';
+import resume from '@stringparser/cv/src/config';
 
 const DownloadResume: React.SFC = ({ children }) => (
   <a href={resume.pdf}>

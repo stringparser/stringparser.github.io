@@ -1,15 +1,15 @@
 import Head from 'next/head';
-import { injectGlobal } from 'styled-components';
+import { createGlobalStyle } from 'styled-components'
 
 import { forMedia } from './mixins';
-import { FontHeadLink, contentFont } from './Font';
+import { contentFont } from './Font';
 
 import Navbar from './Navbar';
 import Footer from './Footer';
-import { BACKEND_URL, META_KEYWORDS, TWITTER_URL } from '../config/client.js';
+import { BACKEND_URL, META_KEYWORDS, TWITTER_URL } from '../config/client';
 import { AnalyticsHeadScript } from './Analytics';
 
-injectGlobal`
+const GlobalStyle = createGlobalStyle`
   html {
     font-size: 15px;
   }
@@ -25,13 +25,17 @@ injectGlobal`
   }
 
   body {
-    ${contentFont}
+    font-family: ${contentFont};
     background-color: snow;
   }
 
   * {
     z-index: 0;
     box-sizing: border-box;
+  }
+
+  li {
+    line-height: 1.6rem;
   }
 
   a {
@@ -55,7 +59,6 @@ const Page: React.SFC<PageProps> = ({ title, children }) => (
       <title>{title}</title>
       <meta name="keywords" content={META_KEYWORDS} />
       <meta name="description" content="Javier Carrillo Milla. Freelance Software Engineer" />
-      <FontHeadLink />
 
       <meta name="theme-color" content="#000" />
       <link rel="apple-touch-icon" href={logo} />
@@ -71,6 +74,8 @@ const Page: React.SFC<PageProps> = ({ title, children }) => (
 
       <AnalyticsHeadScript />
     </Head>
+
+    <GlobalStyle />
 
     <Navbar />
 

@@ -15,20 +15,20 @@
     "deploy": "yarn export && git push origin `git subtree split --prefix=docs`:master --force"
   },
   "devDependencies": {
+    "@babel/core": "^7.17.5",
     "@stringparser/cv": "https://github.com/stringparser/cv.git",
     "@types/next": "^6.0.3",
     "@types/react": "^16.4.4",
     "@types/react-dom": "^16.0.6",
-    "@zeit/next-typescript": "^1.1.0",
     "babel-plugin-styled-components": "^1.5.1",
-    "next": "^6.1.0",
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1",
-    "styled-components": "^3.3.3",
+    "next": "^12.1.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "styled-components": "^5.2.3",
     "tslint": "^5.10.0",
     "tslint-config-airbnb": "^5.9.2",
     "tslint-react": "^3.6.0",
-    "typescript": "^2.9.2"
+    "typescript": "^4.6.2"
   },
   "dependencies": {
     "@types/segment-analytics": "^0.0.28",
