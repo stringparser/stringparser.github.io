@@ -91,7 +91,6 @@ const ContactPage: React.FC = () => (
 
           <Text>
             You can always send me an <EmailMeLink /> or message me via{' '}
-            <a href={LINKEDIN_URL}>linkedin</a>,{' '}
             <a href={TWITTER_URL}>twitter</a> or{' '}
             <a href={GITHUB_URL}>github</a>.
           </Text>

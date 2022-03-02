@@ -24,10 +24,8 @@ const ContactSection: React.FC<Props> = (props) => (
         <Text>
           You can always send me an <EmailMeLink />{' '}
           or find me in{' '}
-            <a href={GITHUB_URL}>github</a>,{' '}
-            <a href={TWITTER_URL}>twitter</a> or{' '}
-            <a href={LINKEDIN_URL}>linkedin</a>
-          .
+            <a href={GITHUB_URL}>github</a> or{' '}
+            <a href={TWITTER_URL}>twitter</a>.
         </Text>
       </Layer>
       <Layer mixins={[align('center'), gutter()]}>
