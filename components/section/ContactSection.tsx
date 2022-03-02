@@ -3,7 +3,7 @@ import Section from './Section';
 
 import { gutter, align } from '../mixins';
 import { twoColumnSectionStyles } from '../../pages';
-import { LINKEDIN_URL, TWITTER_URL, GITHUB_URL } from '../../config/client';
+import { TWITTER_URL, GITHUB_URL } from '../../config/client';
 
 import Text from '../Text';
 import Layer from '../Layer';
