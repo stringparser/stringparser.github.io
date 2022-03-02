@@ -1,7 +1,7 @@
 import Page from '../components/Page';
 import Section from '../components/section/Section';
 
-import { EMAIL, LINKEDIN_URL, TWITTER_URL, GITHUB_URL } from '../config/client';
+import { EMAIL, TWITTER_URL, GITHUB_URL } from '../config/client';
 
 import Text from '../components/Text';
 import Card from '../components/Card';
