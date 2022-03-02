@@ -37,10 +37,11 @@ const ContactPage: React.FC = () => (
 
     <Section id="services">
       <Layer mixins={[align('center')]}>
+        <BR height={2} />
         <H2>
           Services
         </H2>
-        <BR height={2} />
+        <BR height={3} />
       </Layer>
       <Layer mixins={[list(), columns()]}>
         <Card href={`mailto:${EMAIL}?subject=Definition, schedule a call`}>
@@ -90,7 +91,7 @@ const ContactPage: React.FC = () => (
           </H2>
 
           <Text>
-            You can always send me an <EmailMeLink /> or message me via{' '}
+            You can always send me an <EmailMeLink /> or find me at{' '}
             <a href={TWITTER_URL}>twitter</a> or{' '}
             <a href={GITHUB_URL}>github</a>.
           </Text>
