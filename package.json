@@ -11,7 +11,9 @@
     "start": "next start",
     "clean": "rm -rf docs/**/* && touch docs/.nojekyll",
     "build": "yarn clean && next build",
+    "assets": "cp node_modules/@stringparser/cv/dist/cv.pdf public/",
     "export": "yarn build && NODE_ENV=production next export -o docs && git add docs && git commit -m 'new site version'",
+    "predeploy": "yarn assets",
     "deploy": "yarn export && git push origin `git subtree split --prefix=docs`:master --force"
   },
   "devDependencies": {
