@@ -10,6 +10,11 @@ import { align, gutter } from '../components/mixins';
 const AboutContent = () => (
   <Layer mixins={[gutter(2)]}>
     <Text>
+      I'm currently focused on building <a href="https://reactnative.dev/">ReactNative</a> applications{' '}
+      and front-end solutions with <a href="https://reactjs.org/">React.js</a>,{' '}
+      <a href="https://redux.js.org/">redux</a> or <a href="https://react-query.tanstack.com/">useQuery</a>{' '}
+      and TypeScript. I also have experience on the backend and setting up infrastructure. At the moment I would not mind to do some more backend
+      work. Also, learning Rust when I have some spare time. Is very nice. {'\n\n'}
       My background is in Physics, I've studied it in <a href="//www.ugr.es">Granada</a> (Spain){' '}
       and in <a href="//www.lmu.de">Munich</a> (Germany). I like to solve problems, the simpler{' '}
       the solution the better. I'm from a{' '}
