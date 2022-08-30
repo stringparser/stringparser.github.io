@@ -7,7 +7,7 @@
   "private": false,
   "repository": "git@github.com:stringparser/stringparser.co.git",
   "scripts": {
-    "dev": "next",
+    "dev": "rm -rf .next && next",
     "start": "next start",
     "clean": "rm -rf docs/**/* && touch docs/.nojekyll",
     "build": "yarn clean && next build",
