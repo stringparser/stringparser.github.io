@@ -10,11 +10,10 @@ import { align, gutter } from '../components/mixins';
 const AboutContent = () => (
   <Layer mixins={[gutter(2)]}>
     <Text>
-      I'm currently focused on building <a href="https://reactnative.dev/">ReactNative</a> applications{' '}
+      Currently, I'm focused building backend applications and learning more about infrastructure.<br /><br />
+      I used to build <a href="https://reactnative.dev/">ReactNative</a> applications{' '}
       and front-end solutions with <a href="https://reactjs.org/">React.js</a>,{' '}
-      <a href="https://redux.js.org/">redux</a> or <a href="https://react-query.tanstack.com/">useQuery</a>{' '}
-      and TypeScript. I also have experience on the backend and setting up infrastructure. At the moment I would not mind to do some more backend
-      work. Also, learning Rust when I have some spare time. Is very nice. {'\n\n'}
+      <a href="https://redux.js.org/">redux</a> or <a href="https://react-query.tanstack.com/">useQuery</a> and TypeScript. At the moment I'm learning Rust when I have some spare time. Is very nice. {'\n\n'}
       My background is in Physics, I've studied it in <a href="//www.ugr.es">Granada</a> (Spain){' '}
       and in <a href="//www.lmu.de">Munich</a> (Germany). I like to solve problems, the simpler{' '}
       the solution the better. I'm from a{' '}
@@ -33,6 +32,8 @@ const AboutContent = () => (
       <a href="//github.com/gulpjs/gulp">gulp</a>.{' '}
       I prefer doing things and then talking about them instead of the other way around.{' '}
       I like kindness and honesty. I believe in patience and hard work.
+      <br /><br />
+      For a more complete experience/skills you can always check <a href="/cv">my cv</a>.
     </Text>
   </Layer>
 );

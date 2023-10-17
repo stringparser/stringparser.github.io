@@ -2,8 +2,8 @@
 import Section from './Section';
 
 import { gutter, align } from '../mixins';
+import { GITHUB_URL } from '../../config/client';
 import { twoColumnSectionStyles } from '../../pages';
-import { TWITTER_URL, GITHUB_URL } from '../../config/client';
 
 import Text from '../Text';
 import Layer from '../Layer';
@@ -23,9 +23,7 @@ const ContactSection: React.FC<Props> = (props) => (
 
         <Text>
           You can always send me an <EmailMeLink />{' '}
-          or find me in{' '}
-            <a href={GITHUB_URL}>github</a> or{' '}
-            <a href={TWITTER_URL}>twitter</a>.
+          or find me in <a href={GITHUB_URL}>github</a>.
         </Text>
       </Layer>
       <Layer mixins={[align('center'), gutter()]}>

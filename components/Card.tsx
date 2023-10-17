@@ -37,19 +37,13 @@ const StyledCard = styled('div')<CardProps>`
   ${linkHighlight()}
 `;
 
-const onClick = (href: string) => () => {
-  if (href) {
-    window.location.assign(href);
-  }
-};
-
 type CardProps = {
   href?: string;
 };
 
 const Card: React.FC<CardProps> = ({ href, children }) => (
-  <StyledCard onClick={onClick(href)}>
-    {children}
+  <StyledCard>
+    {href ? <a href={href}>{children}</a> : children}
   </StyledCard>
 );
 

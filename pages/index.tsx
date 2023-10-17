@@ -64,30 +64,8 @@ const IndexPage: React.FC = () => (
           </H2>
           <Text>
           {`
-            Creating front-end applications for web, mobile or desktop is my main focus. \
-            I also have experience coding back-end services and setting up infrastructure.
-          `}
-          </Text>
-
-          <ContactButton />
-        </Layer>
-        <Layer mixins={[align('center'), gutter()]}>
-          <Image
-            dim={150}
-            src="/static/img/frontend-dev-icon.png"
-          />
-        </Layer>
-      </Layer>
-    </Section>
-
-    <Section id="drive" variation="info">
-      <Layer mixins={twoColumnSectionStyles}>
-        <Layer mixins={[align('v-center'), gutter()]}>
-          <H2>
-            I thrive finding a path to bring ideas to life
-          </H2>
-          <Text>
-          {`
+            I have years of experience coding front-end web and native apps.\n
+            Currently, I'm focused building backend applications and learning more about infrastructure.\n
             I studied Physics, so it always has been a passion for me \
             to understand complex systems and find solutions that work.
           `}
@@ -97,7 +75,7 @@ const IndexPage: React.FC = () => (
         </Layer>
         <Layer mixins={[align('center'), gutter()]}>
           <Image
-            dim={200}
+            dim={150}
             src="/static/img/fractal-canopy.png"
           />
         </Layer>
