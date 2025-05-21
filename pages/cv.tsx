@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import * as cv from '@stringparser/cv/src/config';
+import * as cv from '../config/cv';
 
 import Page from '../components/Page';
 import Text from '../components/Text';

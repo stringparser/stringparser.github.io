@@ -11,14 +11,11 @@
     "start": "next start",
     "clean": "rm -rf docs/**/* && touch docs/.nojekyll",
     "build": "yarn clean && next build",
-    "assets": "cp node_modules/@stringparser/cv/dist/cv.pdf public/",
     "export": "yarn build && NODE_ENV=production next export -o docs && git add docs && git commit -m 'new site version'",
-    "predeploy": "yarn assets",
     "deploy": "yarn export && git push origin `git subtree split --prefix=docs`:master --force"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
-    "@stringparser/cv": "https://github.com/stringparser/cv.git",
     "@types/babel__core": "^7.1.18",
     "@types/next": "^6.0.3",
     "@types/react": "^16.4.4",

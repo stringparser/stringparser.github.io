@@ -1,5 +1,5 @@
 
-import {technologies} from '@stringparser/cv/src/config';
+import {technologies} from './cv';
 
 export const PHONE = '004917630139466';
 export const EMAIL = 'stringparser@gmail.com';
