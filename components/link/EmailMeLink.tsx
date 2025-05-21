@@ -9,7 +9,7 @@ export function handleMailToLink(href: string) {
 
 const EmailMeLink: React.FC = () => (
   <a onClick={handleMailToLink(`mailto:${EMAIL}`)}>
-    email
+    email to stringparser@gmail.com
   </a>
 );
 
