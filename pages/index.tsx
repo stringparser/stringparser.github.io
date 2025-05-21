@@ -5,7 +5,6 @@ import Image from '../components/layout/Image';
 import Section from '../components/section/Section';
 import Highlight from '../components/text/Highlight';
 import { H1, H2 } from '../components/Heading';
-import ContactButton from '../components/button/ContactButton';
 import ContactSection from '../components/section/ContactSection';
 import { breakpoints } from '../components/theme';
 import { align, gutter, forMedia } from '../components/mixins';
@@ -71,7 +70,11 @@ const IndexPage: React.FC = () => (
           `}
           </Text>
 
-          <ContactButton />
+          <a href="/contact" style={{marginTop: '2rem', borderRadius: '10px', border: '1px solid transparent', background: '#fbf36d', color: 'rgba(0,0,0,0.8)', textAlign: 'center', padding: '1.25rem 0.5rem', textDecoration: 'none' }}>
+              <b>
+                GET IN CONTACT
+              </b>
+          </a>
         </Layer>
         <Layer mixins={[align('center'), gutter()]}>
           <Image

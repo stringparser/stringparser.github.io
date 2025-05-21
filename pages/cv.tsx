@@ -161,6 +161,7 @@ const ResumePage: React.FC = () => (
       <H3>
         Education
       </H3>
+      <br />
 
       <UL isUnstyled={true}>
         {cv.education.map((el, index) => {
