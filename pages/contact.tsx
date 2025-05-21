@@ -91,9 +91,7 @@ const ContactPage: React.FC = () => (
           </H2>
 
           <Text>
-            You can always send me an <EmailMeLink /> or find me at{' '}
-            <a href={TWITTER_URL}>twitter</a> or{' '}
-            <a href={GITHUB_URL}>github</a>.
+            You can always send me an <EmailMeLink /> or find me on <a href={GITHUB_URL}>github</a>.
           </Text>
         </Layer>
         <Layer mixins={[align('center'), gutter()]}>

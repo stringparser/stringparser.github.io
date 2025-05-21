@@ -1,7 +1,14 @@
 import { EMAIL } from '../../config/client';
 
+export function handleMailToLink(href: string) {
+  return function onClick(ev: React.SyntheticEvent<any>) {
+    ev.preventDefault();
+    window.open(href, '_blank');
+  }
+}
+
 const EmailMeLink: React.FC = () => (
-  <a href={`mailto:${EMAIL}`}>
+  <a onClick={handleMailToLink(`mailto:${EMAIL}`)}>
     email
   </a>
 );
