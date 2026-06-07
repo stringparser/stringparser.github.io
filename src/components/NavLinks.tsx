@@ -2,7 +2,6 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { buttonStyles } from "@/components/ActionButton";
 import { navLinks, site } from "@/lib/site";
 
 export function NavLinks() {
@@ -10,24 +9,24 @@ export function NavLinks() {
   const isHome = pathname === "/";
 
   return (
-    <nav className="flex flex-wrap items-center justify-center gap-3">
+    <nav className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-base">
       {isHome ? (
         <a
           href={site.cvPdf}
           target="_blank"
           rel="noopener noreferrer"
-          className={buttonStyles.secondary}
+          className="text-link"
         >
           cv
         </a>
       ) : null}
       {navLinks.map(({ href, label, ...link }) =>
         "external" in link && link.external ? (
-          <a key={href} href={href} className={buttonStyles.secondary}>
+          <a key={href} href={href} className="text-link">
             {label}
           </a>
         ) : (
-          <Link key={href} href={href} className={buttonStyles.secondary}>
+          <Link key={href} href={href} className="text-link">
             {label}
           </Link>
         ),

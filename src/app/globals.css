@@ -50,6 +50,7 @@ a {
   -webkit-box-decoration-break: clone;
 }
 
+.text-link,
 .content-body a {
   color: rgb(255 255 255 / 0.82);
   font-weight: 500;
@@ -57,13 +58,17 @@ a {
   text-decoration-color: rgb(255 255 255 / 0.35);
   text-underline-offset: 0.18em;
   text-decoration-skip-ink: auto;
-  margin-inline: 0.08em;
   transition:
     color 150ms ease,
     text-decoration-color 150ms ease;
 }
 
+.text-link:hover,
 .content-body a:hover {
   color: white;
   text-decoration-color: rgb(255 255 255 / 0.85);
+}
+
+.content-body a {
+  margin-inline: 0.08em;
 }
